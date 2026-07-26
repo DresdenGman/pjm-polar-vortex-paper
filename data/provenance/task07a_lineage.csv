@@ -1,0 +1,12 @@
+source,status,source_url,download_date,date_range,timezone,used_by_task07a,notes
+pjm_load_2010, AUTHORITATIVE, PJM Data Miner 2 - Hourly Load Metered, 2026-07-06, 2010-01-01 to 2010-12-31, EPT, yes, RTO-only; all 8760 verified
+pjm_load_2011, AUTHORITATIVE, PJM Data Miner 2 - Hourly Load Metered, 2026-07-06, 2011-01-01 to 2011-12-31, EPT, yes, RTO-only; all 8760 verified
+pjm_load_2012, AUTHORITATIVE, PJM Data Miner 2 - Hourly Load Metered, 2026-07-06, 2012-01-01 to 2012-12-31, EPT, yes, RTO-only leap year; 8784 verified
+pjm_load_2013, AUTHORITATIVE, PJM Data Miner 2 - Hourly Load Metered, 2026-07-06, 2013-01-01 to 2013-12-31, EPT, yes, RTO-only; all 8760 verified
+pjm_load_2014, AUTHORITATIVE, PJM Data Miner 2 - Hourly Load Metered, 2026-07-06, 2014-01-01 to 2014-12-31, EPT, yes, RTO-only; peak 140510 MW
+pjm_day_ahead_forecast, AUTHORITATIVE, PJM Data Miner 2 - Historical Load Forecasts, 2026-07-06, 2014-01-01 to 2014-12-31, EPT, yes, 8759 DST-aligned hours
+era5_weather, AUTHORITATIVE, CDS API reanalysis-era5-single-levels, 2026-07-05, 2010-01-01 to 2014-12-31, UTC, yes, great_lakes_core aggregation; reanalysis only
+noaa_stations, PROVISIONAL, NOAA ISD, 2026-07-05, 2014 only, UTC, no, 4 stations only; not used in Task07A
+legacy_unverified, LEGACY_UNVERIFIED, unknown, unknown, unknown, unknown, no, quarantined; NOT used
+pjm_era5_modeling_table, AUTHORITATIVE, derived from PJM+ERA5, 2026-07-06, 2010-2014, UTC/EPT, yes, 43824 rows; UTC merge key
+modeling_features, PROVISIONAL, derived from modeling table, 2026-07-06, 2011-01-08 to 2014-12-31, UTC/EPT, yes, 43656 rows; 168 dropped for lags

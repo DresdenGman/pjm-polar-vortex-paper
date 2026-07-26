@@ -1,0 +1,19 @@
+=== C05A Validation Log ===
+Date: 2026-07-26
+Branch: C05-epsr-rebuild
+
+=== python -m compileall -q src/ ===
+PASS (0 errors)
+
+=== pytest src/data/tests/ ===
+7 passed, 2 failed
+
+FAILED src/data/tests/test_preprocess_pjm_load.py::test_synthetic_peak
+  - assert 142000.0 == 140000 (fixture contains 142000 MW, test expects 140000)
+
+FAILED src/data/tests/test_preprocess_pjm_load.py::test_bad_values_detected
+  - assert 2 >= 3 (fixture doesn't include expected duplicate timestamp)
+
+=== pdflatex -interaction=nonstopmode paper.tex ===
+Pass 1: 0 errors, Output written on paper.pdf (41 pages)
+Pass 2: 0 errors, Output written on paper.pdf (41 pages)

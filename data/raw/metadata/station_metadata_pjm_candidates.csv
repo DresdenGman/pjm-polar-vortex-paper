@@ -1,0 +1,21 @@
+station_id,station_name,state,latitude,longitude,data_completeness_2014,reason
+72530094846,Chicago OHare Intl,IL,41.96,-87.93,high,Major PJM load center; northern extreme
+72405013743,Baltimore Washington Intl,MD,39.18,-76.67,high,Mid-Atlantic PJM hub
+72408013739,Philadelphia Intl,PA,39.87,-75.23,high,Eastern PJM; load correlation
+72421093814,Cincinnati Northern Kentucky,OH,39.05,-84.67,high,Ohio valley PJM zone
+72429093821,Pittsburgh Intl,PA,40.50,-80.23,low,Western PA; 2014 data issue
+72428004825,Cleveland Hopkins Intl,OH,41.41,-81.85,unknown,Great Lakes PJM zone
+72423003721,Indianapolis Intl,IN,39.72,-86.28,unknown,Midwest PJM zone
+72439003326,Columbus John Glenn,OH,39.99,-82.88,unknown,Central Ohio PJM
+72450003017,St Louis Lambert,MO,38.75,-90.37,unknown,Western PJM boundary
+72411003812,Roanoke Regional,VA,37.32,-79.97,unknown,Southern PJM zone
+72406003721,Washington Dulles,VA,38.95,-77.45,unknown,Second DC-area station
+72306003721,Raleigh Durham Intl,NC,35.89,-78.78,unknown,Southern PJM
+72451003919,Detroit Metro,MI,42.22,-83.35,unknown,Great Lakes PJM
+72640003920,Milwaukee Mitchell,WI,42.95,-87.90,unknown,Northern PJM
+72528004721,Buffalo Niagara,NY,42.94,-78.73,unknown,NY PJM zone
+72641003820,Madison Dane County,WI,43.14,-89.35,unknown,Northern PJM
+72414003812,Charleston Yeager,WV,38.37,-81.59,unknown,Appalachian PJM
+72409003812,Norfolk Intl,VA,36.90,-76.19,unknown,Coastal PJM zone
+72637003820,Grand Rapids,MI,42.88,-85.52,unknown,Great Lakes PJM
+72438003807,Dayton Intl,OH,39.90,-84.22,unknown,Ohio PJM zone

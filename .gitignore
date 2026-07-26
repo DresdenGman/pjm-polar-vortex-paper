@@ -24,3 +24,13 @@ paper_backup_before_*.tex
 # Python cache
 __pycache__/
 *.pyc
+
+# Large reproducible meteorological inputs
+*.nc
+*.nc4
+*.grib
+*.grib2
+
+# Local raw/intermediate data
+data/raw/
+data/interim/

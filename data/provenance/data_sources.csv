@@ -1,0 +1,12 @@
+# Data Sources — PJM Polar Vortex Manuscript
+
+| dataset_name | source_organization | source_url | file_path | raw_or_processed | download_date | date_range | timezone | units | processing_script | notes | verification_status |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| NOAA ISD Chicago O'Hare 2014 | NOAA NCEI | https://www.ncei.noaa.gov/data/global-hourly/access/2014/72530094846.csv | data/raw/noaa/Chicago_OHare_IL_2014.csv | raw | 2026-07-05 | 2014-01-01 to 2014-12-31 | UTC | °C, m/s | — | 13,093 records | VERIFIED |
+| NOAA ISD Baltimore 2014 | NOAA NCEI | https://www.ncei.noaa.gov/data/global-hourly/access/2014/72405013743.csv | data/raw/noaa/Baltimore_Washington_MD_2014.csv | raw | 2026-07-05 | 2014-01-01 to 2014-12-31 | UTC | °C, m/s | — | 14,595 records | VERIFIED |
+| NOAA ISD Philadelphia 2014 | NOAA NCEI | https://www.ncei.noaa.gov/data/global-hourly/access/2014/72408013739.csv | data/raw/noaa/Philadelphia_PA_2014.csv | raw | 2026-07-05 | 2014-01-01 to 2014-12-31 | UTC | °C, m/s | — | 13,699 records | VERIFIED |
+| NOAA ISD Cincinnati 2014 | NOAA NCEI | https://www.ncei.noaa.gov/data/global-hourly/access/2014/72421093814.csv | data/raw/noaa/Cincinnati_OH_2014.csv | raw | 2026-07-05 | 2014-01-01 to 2014-12-31 | UTC | °C, m/s | — | 12,494 records | VERIFIED |
+| NOAA Cleaned Hourly 2014 | NOAA NCEI (processed) | — | data/interim/noaa_station_hourly_2014_clean.csv | processed | 2026-07-05 | 2014-01-01 to 2014-12-31 | UTC+EPT | °F, mph | parse_noaa_isd.py (inline) | 52,288 records, 4 stations | VERIFIED |
+| NOAA Vortex Window Provisional | NOAA NCEI (processed) | — | data/processed/noaa_vortex_window_2014_01_06_08_provisional.csv | processed | 2026-07-05 | 2014-01-06 to 2014-01-08 | EPT | °F, mph, °F·h | aggregate_noaa.py (inline) | 72 hours, 4-station simple avg, PROVISIONAL | PROVISIONAL |
+| PJM Hourly Load (Quarantined) | PJM Data Miner 2 (unverified) | https://dataminer2.pjm.com/feed/hourly_loads | legacy_unverified/embedded_data_exports/pjm_hourly_load_2014.csv | raw (unverified) | unknown | 2014-01-01 to 2014-01-15 | Assumed EPT | MW | — | 360 rows, 14-digit precision suspicious | UNVERIFIED |
+| PJM Vortex Predictions (Quarantined) | Unknown pipeline | — | legacy_unverified/embedded_data_exports/polar_vortex_72h_predictions.csv | raw (unverified) | unknown | 2014-01-06 to 2014-01-08 | Assumed EPT | MW, °F | — | 72 rows, model outputs from unknown training | UNVERIFIED |
