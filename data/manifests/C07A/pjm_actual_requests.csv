@@ -1,0 +1,10 @@
+year,filename,rows,checksum,source
+2015,pjm_load_2015_rto_hourly.csv,227166,d67791d80d4dd2c4,PJM Data Miner 2
+2016,pjm_load_2016_rto_hourly.csv,245953,f5fa0269cef7e81c,PJM Data Miner 2
+2017,pjm_load_2017_rto_hourly.csv,250418,cb25d2fdd94648f1,PJM Data Miner 2
+2018,pjm_load_2018_rto_hourly.csv,254785,e957c2c93519db67,PJM Data Miner 2
+2019,pjm_load_2019_rto_hourly.csv,262801,c4f13503da187ab1,PJM Data Miner 2
+2020,pjm_load_2020_rto_hourly.csv,263521,fa67811703937eec,PJM Data Miner 2
+2021,pjm_load_2021_rto_hourly.csv,262801,6d6b4598b183e823,PJM Data Miner 2
+2022,pjm_load_2022_rto_hourly.csv,262801,d98892d5dd697485,PJM Data Miner 2
+TOTAL_2015_2022,,2030246,,
