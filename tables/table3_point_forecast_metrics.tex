@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{Point forecast performance. All values in MW. Jan~7 18:00 EPT is the official cold-event peak (140,510~MW). The GBoost and Linear models use ERA5 retrospective reanalysis weather features.}
+\label{tab:point_metrics}
+\begin{tabular}{lrrrrr}
+\toprule
+Model & FY MAE & FY RMSE & Vort. MAE & Vort. RMSE & Peak Error \\
+\midrule
+Persistence-1h & 2,745 & 3,542 & 2,805 & 3,565 & $+$2,906 \\
+Naive-24h & 5,960 & 8,105 & 15,598 & 18,645 & $+$9,973 \\
+Naive-168h & 8,009 & 10,871 & 24,531 & 26,409 & $+$30,769 \\
+Linear & 2,354 & 3,027 & 4,248 & 5,100 & $+$5,525 \\
+GBoost & 721 & 994 & 1,705 & 2,037 & $-$1,388 \\
+PJM Day-Ahead & 1,937 & 2,563 & 3,148 & 3,809 & $+$2,545 \\
+\bottomrule
+\end{tabular}
+\end{table}

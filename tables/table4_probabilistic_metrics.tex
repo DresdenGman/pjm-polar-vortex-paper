@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Probabilistic forecast performance of QR-GBT (q50 point, plus 90\% and 98\% prediction intervals). The 90\% PI coverage degrades from 86.8\% full-year to 66.7\% during the Polar Vortex. The official event peak (140,510~MW at Jan~7 18:00) falls outside the 98\% PI.}
+\label{tab:prob_metrics}
+\begin{tabular}{lrrrrr}
+\toprule
+Window & q50 MAE & Mean Pinball & 90\% PI Cov. & 98\% PI Cov. & Winkler (90\%) \\
+\midrule
+Full-year 2014 & 761 & 153 & 86.8\% & 97.3\% & 4,627 \\
+Jan 6--8 Vortex & 2,130 & 473 & 66.7\% & 84.7\% & 15,476 \\
+Jun 16--18 Summer & 1,060 & 209 & 86.1\% & 93.1\% & 6,355 \\
+Top 1\% load hours & 2,539 & 502 & 63.2\% & 82.8\% & 16,168 \\
+\bottomrule
+\end{tabular}
+\end{table}

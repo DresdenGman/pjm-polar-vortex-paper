@@ -1,0 +1,95 @@
+3. Forecasting Framework
+3.1 Forecasting Problem Formulation
+The forecasting task is defined as short-term hourly load forecasting: given calendar features, lagged load information, and same-hour ERA5 retrospective reanalysis weather inputs, produce estimates of PJM RTO metered load (actual_load_mw) for each hour in the evaluation period. The target variable is the hourly metered aggregate load across the full PJM transmission system, measured in megawatts.
+For point forecast models, the prediction at hour $t$ is a single-valued estimate $\hat{y}t$ of expected load. For probabilistic models, the prediction at hour $t$ is a set of conditional quantile estimates $\hat{q}{\tau}(t)$, where $\tau \in (0,1)$ denotes the quantile level. A conditional quantile estimate $\hat{q}_{\tau}(t)$ targets the value below which a fraction $\tau$ of possible load outcomes would fall, conditional on the available features at hour $t$.
+Quantile forecasts are evaluated using the pinball loss function. For a given quantile level $\tau$ and observed load $y_t$, the pinball loss is:
+$\mathcal{L}_{\tau}(y_t, \hat{q}_{\tau}(t)) = \begin{cases} (1 - \tau)\left(\hat{q}_{\tau}(t) - y_t\right), & y_t < \hat{q}_{\tau}(t), \\ \tau\left(y_t - \hat{q}_{\tau}(t)\right), & y_t \geq \hat{q}_{\tau}(t). \end{cases}$
+The pinball loss penalizes over-estimation and under-estimation asymmetrically according to $\tau$: at high quantile levels, under-estimation is penalized more heavily than over-estimation. The mean pinball loss averaged across quantile levels summarizes overall probabilistic forecast skill. The Winkler score is used to evaluate prediction interval sharpness and coverage jointly and is reported alongside empirical coverage rates in Section 5.
+Evaluation is reported for two windows: the full calendar year 2014 and the 72-hour January 6–8, 2014 polar vortex window defined in Section 2.4. All weather-informed model results use same-hour ERA5 retrospective reanalysis weather input and reflect an idealized retrospective weather-information setting rather than an operational forecast-weather setting.
+
+Corrected Individual Sentences
+Section 3.2 — ws description (replace existing):
+ws — wind speed in mph, computed as $\sqrt{u_{10}^2 + v_{10}^2}$ converted from m/s; provides wind information relevant to wind chill and cold-stress feature construction.
+Section 3.3 — PJM Day-Ahead input description (replace existing):
+PJM Day-Ahead forecasts are obtained from PJM Data Miner 2 and represent the operational day-ahead load forecast issued by PJM using PJM's internal forecasting system and inputs not controlled by this study.
+
+3.2 Feature Construction
+The three trained models in this study — Linear Regression, GBoost, and QR-GBT — share a common 14-feature input structure. Features are constructed from three sources: calendar information derived from the timestamp, lagged and rolling load values derived from the PJM hourly load series, and weather variables derived from the ERA5 great_lakes_core retrospective reanalysis fields described in Section 2.2. Naive baselines use only their defining lagged load values as described in Section 3.3 and do not use this feature set.
+Calendar features capture the systematic diurnal, weekly, and seasonal structure of electricity demand:
+
+
+hour — hour of day (0–23), capturing the diurnal load cycle
+
+
+day_of_week — day of week (0–6), capturing weekday and weekend demand patterns
+
+
+month — calendar month (1–12), capturing seasonal load variation
+
+
+is_weekend — binary indicator for Saturday and Sunday, capturing the structural load reduction on non-business days
+
+
+Lag and rolling load features capture demand persistence and load memory at multiple timescales:
+
+
+load_lag_1h — load observed one hour prior, capturing short-term persistence
+
+
+load_lag_24h — load observed 24 hours prior, capturing same-hour-previous-day patterns
+
+
+load_lag_168h — load observed 168 hours (one week) prior, capturing same-hour-previous-week patterns
+
+
+rolling_mean_24h — arithmetic mean of load over the preceding 24 hours, summarizing recent short-term baseline load
+
+
+rolling_mean_168h — arithmetic mean of load over the preceding 168 hours, summarizing the recent weekly baseline load level
+
+
+Weather features are derived from ERA5 t2m, u10, and v10 fields aggregated over the great_lakes_core grid box as described in Section 2.2. Dewpoint temperature (d2m) was not downloaded and is not used. NOAA ISD station data are not used in the modeling table:
+
+
+t_f — 2-metre air temperature in degrees Fahrenheit, the primary thermal demand driver
+
+
+wc_f — wind chill in degrees Fahrenheit, computed using the NOAA/NWS formula when T ≤ 50°F and wind speed exceeds 3 mph, otherwise equal to t_f; captures the additional heating demand effect of cold wind
+
+
+ws — wind speed in mph, computed as $\sqrt{u_{10}^2 + v_{10}^2}$ converted from m/s; contributes to wind chill and provides wind information relevant to wind chill and cold-stress feature construction
+
+
+hdh — heating degree hours, computed as max(65 $-$ T°F, 0); a non-negative hourly measure of heating demand pressure
+
+
+cdh — cooling degree hours, computed as max(T°F $-$ 65, 0); a non-negative hourly measure of cooling demand pressure
+
+
+Feature construction respects chronological ordering throughout. No future observations are used in constructing the feature value for the prediction target at hour $t$. No 2014 observations are used for model training. The complete feature set is summarized alongside model specifications in Table 2.
+3.3 Point Forecast Baselines
+Five point forecast models are evaluated, ranging from naive reference baselines to a trained machine learning model. PJM Day-Ahead load forecasts are included as an external operational benchmark.
+Persistence-1h predicts hour $t$ load as equal to the load observed at hour $t - 1$. This model requires no training and uses no weather input; it serves as a lower-bound reference representing the simplest possible extrapolation from the most recent observation.
+Naive-24h predicts hour $t$ load as equal to the load observed at the same hour on the previous day (hour $t - 24$). This model requires no training and captures the diurnal cycle without any explicit weather or calendar modeling.
+Naive-168h predicts hour $t$ load as equal to the load observed at the same hour one week prior (hour $t - 168$). This model requires no training and captures both the diurnal cycle and the weekly schedule pattern; it is often a stronger naive baseline than Naive-24h during periods of stable weekly demand structure.
+Linear Regression is a multivariate linear model fitted to the full 14-feature set described in Section 3.2 using ordinary least squares on the 2010–2013 training data. It uses the same ERA5 retrospective weather inputs as the machine learning models and serves as a parametric reference point for assessing the marginal contribution of nonlinear tree-based modeling.
+GBoost is a gradient boosted regression tree model fitted on the same 14-feature training set. Gradient boosted trees construct an ensemble of shallow decision trees in a stagewise additive manner, with each successive tree fitted to the residuals of the preceding ensemble [CITATION: gradient boosting reference]. This approach captures nonlinear feature interactions — including the nonlinear load-temperature relationship at temperature extremes — without requiring explicit interaction terms or polynomial feature expansion. GBoost is trained on the 2010–2013 data and uses the same ERA5 retrospective reanalysis weather inputs as the linear model; all results reflect the retrospective setting.
+PJM Day-Ahead forecasts are obtained from PJM Data Miner 2 and represent the operational day-ahead load forecast issued by PJM using PJM's internal forecasting system and inputs not controlled by this study. PJM Day-Ahead forecasts are not produced by any model in this study and are included solely as an external benchmark to provide operational context for the point forecast results. PJM's internal inputs and methodology are not controlled by this study. No claim of operational superiority over PJM is made; the comparison is retrospective and the ERA5 retrospective setting gives the gradient boosted models an informational advantage not available in real-time operations.
+3.4 Quantile Regression Gradient-Boosted Trees
+Probabilistic forecasts are produced by a quantile regression gradient-boosted trees model (QR-GBT). Rather than minimizing squared error, QR-GBT fits a separate gradient boosted ensemble for each target quantile level by minimizing the pinball loss at that quantile [CITATION: quantile regression reference; CITATION: gradient boosting quantile regression]. This approach makes no parametric assumption about the conditional distribution of load and allows the width and asymmetry of prediction intervals to vary across hours, capturing the dependence of forecast uncertainty on weather conditions, time of day, and load level.
+Seven quantile levels are estimated: q01, q05, q10, q50, q90, q95, and q99. The q50 estimate serves as the QR-GBT median forecast. Nominal prediction intervals are constructed from paired quantiles:
+
+
+The nominal 90% prediction interval is bounded by the q05 lower quantile and the q95 upper quantile.
+
+
+The nominal 98% prediction interval is bounded by the q01 lower quantile and the q99 upper quantile.
+
+
+All seven quantile models are trained on the 2010–2013 training data using the same 14-feature input structure described in Section 3.2 and the same ERA5 retrospective reanalysis weather inputs. Model specifications are summarized in Table 2.
+3.5 Prediction Interval Construction and Quantile Crossing Correction
+A known limitation of independently fitted quantile regression models is quantile crossing: individual quantile estimates fitted separately at different levels are not constrained to be monotonically ordered, and an estimated lower quantile may exceed an estimated upper quantile at some hours. Quantile crossing produces prediction intervals that violate the required monotonicity of a valid cumulative distribution function.
+In the full-year 2014 test set, quantile crossing was detected in 5,786 of 8,760 test hours, representing 66% of all evaluation hours. This crossing rate is substantial and indicates that the independently fitted quantile models produce inconsistent orderings across a large fraction of the test period.
+Post-hoc monotonic rearrangement was applied to enforce non-decreasing quantile order across the seven estimated quantiles at each hour. All prediction interval coverage rates and Winkler scores reported in Section 5 are computed using the rearranged quantile estimates. This correction is post-hoc and should be treated as a methodological limitation: it restores a necessary ordering property but does not guarantee well-calibrated prediction intervals, particularly under distribution-shifting conditions such as an extreme cold-weather event. The implications of this high crossing rate for interval coverage during the polar vortex window are examined in the evaluation results.
+3.6 Workflow Summary
+Figure 2 presents a conceptual diagram of the end-to-end forecasting and evaluation workflow (figure2_workflow.pdf). The pipeline proceeds from two public data sources — PJM Data Miner 2 hourly load records and ERA5 retrospective reanalysis weather fields — through feature construction as described in Sections 2 and 3.2, into parallel point forecast and quantile regression model fitting on the 2010–2013 training period, and finally into evaluation against the held-out 2014 test set across both the full-year and polar vortex event windows. Figure 2 is a conceptual schematic and contains no data-derived numerical results; all evaluation outputs are reported in Section 5.

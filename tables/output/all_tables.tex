@@ -1,0 +1,101 @@
+%% Table 1 — Data and Event Summary
+%% Source: Official PJM Data Miner 2 + ERA5 CDS
+
+\begin{table}[htbp]
+\centering
+\caption{Data summary and event definition. Training uses 2010--2013 PJM RTO hourly load with ERA5 great\_lakes\_core retrospective reanalysis weather. The 2014 test year includes the Jan~6--8 Polar Vortex cold-weather stress window and the Jun~16--18 summer near-peak window. Load values are in MW.}
+\label{tab:data_summary}
+\begin{tabular}{lcccccc}
+\toprule
+Window & Period & Load Mean & Load Max & Load Min & Temp Mean & HDH Mean \\
+\midrule
+Training & 2010--2013 & 91,034 & 158,043 & 49,558 & 52.3 & 12.7 \\
+Test (full-year) & 2014 & 91,034 & 141,678 & 57,570 & 49.8 & 15.1 \\
+Cold-event window & Jan 6--8, 2014 & 120,069 & 140,510 & 82,638 & 3.4 & 61.2 \\
+Summer window & Jun 16--18, 2014 & 126,845 & 141,678 & 108,911 & 73.3 & 0.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% Table 2 — Model Summary
+%% Source: Task07A + Task07B verified outputs
+
+\begin{table}[htbp]
+\centering
+\caption{Models evaluated. All weather-informed models use ERA5 retrospective reanalysis (not operational forecast). For quantile models, post-hoc monotonic rearrangement was applied to correct quantile crossings (66\% of test hours affected).}
+\label{tab:model_summary}
+\begin{tabular}{lllll}
+\toprule
+Model & Type & Weather Input & Training & Role \\
+\midrule
+Persistence-1h & Naive baseline & None & None & Lower bound \\
+Naive-24h & Seasonal naive & None & None & Seasonal benchmark \\
+Naive-168h & Weekly naive & None & None & Weekly benchmark \\
+GBoost & Point forecast & ERA5 reanalysis & 2010--2013 & Point benchmark \\
+QR-GBT & Quantile (q01--q99) & ERA5 reanalysis & 2010--2013 & Prob. forecast \\
+PJM Day-Ahead & Operational & PJM internal & N/A & External benchmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% Table 3 — Point Forecast Metrics
+%% Source: Task07A verified outputs
+
+\begin{table}[htbp]
+\centering
+\caption{Point forecast performance. All values in MW. Jan~7 18:00 EPT is the official cold-event peak (140,510~MW). The GBoost and Linear models use ERA5 retrospective reanalysis weather features.}
+\label{tab:point_metrics}
+\begin{tabular}{lrrrrr}
+\toprule
+Model & Full-Year MAE & Full-Year RMSE & Vortex MAE & Vortex RMSE & Jan 7 18:00 Error \\
+\midrule
+Persistence-1h & 2,745 & 3,542 & 2,805 & 3,565 & $+$2,906 \\
+Naive-24h & 5,960 & 8,105 & 15,598 & 18,645 & $+$9,973 \\
+Naive-168h & 8,009 & 10,871 & 24,531 & 26,409 & $+$30,769 \\
+Linear & 2,354 & 3,027 & 4,248 & 5,100 & $+$5,525 \\
+GBoost & 721 & 994 & 1,705 & 2,037 & $-$1,388 \\
+PJM Day-Ahead & 1,937 & 2,563 & 3,148 & 3,809 & $+$2,545 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% Table 4 — Probabilistic Forecast Metrics
+%% Source: Task07B verified outputs
+
+\begin{table}[htbp]
+\centering
+\caption{Probabilistic forecast performance of QR-GBT (q50 point, plus 90\% and 98\% prediction intervals). The 90\% PI coverage degrades from 86.8\% full-year to 66.7\% during the Polar Vortex. The official event peak (140,510~MW at Jan~7 18:00) falls outside the 98\% PI.}
+\label{tab:prob_metrics}
+\begin{tabular}{lrrrrr}
+\toprule
+Window & q50 MAE & Mean Pinball & 90\% PI Cov. & 98\% PI Cov. & Winkler (90\%) \\
+\midrule
+Full-year 2014 & 761 & 153 & 86.8\% & 97.3\% & 4,627 \\
+Jan 6--8 Vortex & 2,130 & 473 & 66.7\% & 84.7\% & 15,476 \\
+Jun 16--18 Summer & 1,060 & 209 & 86.1\% & 93.1\% & 6,355 \\
+Top 1\% load hours & 2,539 & 502 & 63.2\% & 82.8\% & 16,168 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% Table 5 — Event Peak Prediction Check
+%% Source: Task07B verified outputs
+
+\begin{table}[htbp]
+\centering
+\caption{Prediction check at the official cold-event peak (Jan~7, 2014 18:00 EPT, 140,510~MW). Positive error means underprediction. The actual load exceeds the QR-GBT 98\% prediction interval.}
+\label{tab:event_peak}
+\begin{tabular}{lrrcc}
+\toprule
+Model & Prediction (MW) & Error (MW) & In 90\% PI? & In 98\% PI? \\
+\midrule
+PJM Day-Ahead & 137,965 & $+$2,545 & — & — \\
+Persistence-1h & 137,604 & $+$2,906 & — & — \\
+Naive-24h & 130,537 & $+$9,973 & — & — \\
+GBoost point & 141,898 & $-$1,388 & — & — \\
+QR-GBT q50 & 135,357 & $+$5,153 & Yes & No \\
+QR-GBT q95 & 139,410 & $+$1,100 & No & No \\
+QR-GBT q99 & 139,585 & $+$925 & No & No \\
+\bottomrule
+\end{tabular}
+\end{table}

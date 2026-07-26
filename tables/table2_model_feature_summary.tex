@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{Models evaluated. All weather-informed models use ERA5 retrospective reanalysis (not operational forecast). For quantile models, post-hoc monotonic rearrangement was applied to correct quantile crossings (66\% of test hours affected).}
+\label{tab:model_summary}
+\begin{tabular}{lllll}
+\toprule
+Model & Type & Weather Input & Training & Role \\
+\midrule
+Persistence-1h & Naive baseline & None & None & Lower bound \\
+Naive-24h & Seasonal naive & None & None & Seasonal benchmark \\
+Naive-168h & Weekly naive & None & None & Weekly benchmark \\
+GBoost & Point forecast & ERA5 reanalysis & 2010--2013 & Point benchmark \\
+QR-GBT & Quantile (q01--q99) & ERA5 reanalysis & 2010--2013 & Prob. forecast \\
+PJM Day-Ahead & Operational & PJM internal & N/A & External benchmark \\
+\bottomrule
+\end{tabular}
+\end{table}

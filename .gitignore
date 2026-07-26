@@ -1,0 +1,26 @@
+# Python virtual environment
+venv/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+
+# macOS
+.DS_Store
+
+# Old legacy (unverified)
+legacy_unverified/
+
+# Backup chain (keep in _backups/)
+paper_backup_before_*.tex
+
+# Python cache
+__pycache__/
+*.pyc

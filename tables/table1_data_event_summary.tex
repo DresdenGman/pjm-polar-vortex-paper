@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Data summary and event definition. Training uses 2010--2013 PJM RTO hourly load with ERA5 great\_lakes\_core retrospective reanalysis weather. The 2014 test year includes the Jan~6--8 Polar Vortex cold-weather stress window and the Jun~16--18 summer near-peak window. Load values are in MW.}
+\label{tab:data_summary}
+\begin{tabular}{lcccccc}
+\toprule
+Window & Period & Load Mean & Load Max & Load Min & Temp Mean & HDH Mean \\
+\midrule
+Training & 2010--2013 & 91,034 & 158,043 & 49,558 & 52.3 & 12.7 \\
+Test (full-year) & 2014 & 91,034 & 141,678 & 57,570 & 49.8 & 15.1 \\
+Cold-event window & Jan 6--8, 2014 & 120,069 & 140,510 & 82,638 & 3.4 & 61.2 \\
+Summer window & Jun 16--18, 2014 & 126,845 & 141,678 & 108,911 & 73.3 & 0.0 \\
+\bottomrule
+\end{tabular}
+\end{table}

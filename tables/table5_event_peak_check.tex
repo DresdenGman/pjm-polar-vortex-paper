@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Prediction check at the official cold-event peak (Jan~7, 2014 18:00 EPT, 140,510~MW). Positive error means underprediction. The actual load exceeds the QR-GBT 98\% prediction interval.}
+\label{tab:event_peak}
+\begin{tabular}{lrrcc}
+\toprule
+Model & Pred. & Error & 90\% PI? & 98\% PI? \\
+\midrule
+PJM Day-Ahead & 137,965 & $+$2,545 & — & — \\
+Persistence-1h & 137,604 & $+$2,906 & — & — \\
+Naive-24h & 130,537 & $+$9,973 & — & — \\
+GBoost point & 141,898 & $-$1,388 & — & — \\
+QR-GBT q50 & 135,357 & $+$5,153 & Yes & No \\
+QR-GBT q95 & 139,410 & $+$1,100 & No & No \\
+QR-GBT q99 & 139,585 & $+$925 & No & No \\
+\bottomrule
+\end{tabular}
+\end{table}
