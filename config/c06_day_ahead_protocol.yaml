@@ -46,16 +46,20 @@ protocol:
       inspecting realized errors.
 
 weather_tracks:
-  # Track 1: Operational — archived NDFD forecasts
+  # Track 1: Operational — archived deterministic GFS forecasts (REVISED)
   operational:
-    source: "NDFD (National Digital Forecast Database)"
-    provider: "NOAA/NWS"
+    source: "GFS (Global Forecast System) deterministic"
+    provider: "NOAA NCEP via NCEI archive"
+    cycle: "06Z only"
+    resolution: "0.5-degree"
+    format: "GRIB2"
     description: >
-      Archived operational gridded forecasts produced by the National
-      Weather Service, available for the full study period.
-      These represent the actual weather information available to
-      operational forecasters at each forecast origin.
-    status: "To be downloaded"
+      Archived GFS 0.5° deterministic forecasts from the 06Z cycle.
+      GFS operates four cycles daily (00Z, 06Z, 12Z, 18Z) with forecast
+      horizons exceeding 48 hours. The 06Z cycle is selected conservatively
+      to ensure it always precedes the 12:00 EPT forecast origin.
+      NOT NDFD. NOT NDGD. Official NCEP operational forecast.
+    status: "To be downloaded (10-date sample audit first)"
     classification: "OPERATIONAL — primary weather input for C06 models"
 
   # Track 2: Oracle — ERA5 retrospective reanalysis
