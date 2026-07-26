@@ -1,0 +1,72 @@
+# C07A — Event Registry (PREREGISTERED, LOCKED)
+# Do not modify event windows after examining model errors.
+
+events:
+  - event_id: E2014_PV1
+    official_name: "2014 Polar Vortex 1"
+    official_start_local: "2014-01-06 00:00"
+    official_end_local: "2014-01-08 23:59"
+    official_start_utc: "2014-01-06 05:00"
+    official_end_utc: "2014-01-09 04:59"
+    timezone: "America/New_York"
+    duration_hours: 72
+    boundary_status: VERIFIED_OFFICIAL
+    official_source: "PJM/NERC polar vortex reports"
+    peak_load_anchor_local: "2014-01-07 18:00"
+    peak_load_mw: 140510.2
+    data_available: true
+
+  - event_id: E2015_COLD
+    official_name: "February 2015 Extreme Cold Event"
+    official_peak_anchor_local: "2015-02-20"
+    official_duration_days: 8
+    official_start_local: INFORMATION_MISSING
+    official_end_local: INFORMATION_MISSING
+    official_start_utc: INFORMATION_MISSING
+    official_end_utc: INFORMATION_MISSING
+    timezone: "America/New_York"
+    duration_hours: INFORMATION_MISSING
+    boundary_status: PENDING_PREREGISTERED_WEATHER_RULE
+    official_source: "PJM February 2015 cold event analysis"
+    data_available: false
+    resolution_rule: >
+      Use ERA5 percentile-based cold-event definition (≥48h below
+      winter 5th percentile). Boundaries must be resolved before
+      reporting eight-day event metrics.
+
+  - event_id: E2018_SNAP
+    official_name: "2017-2018 PJM Cold Snap"
+    official_start_local: "2017-12-28 00:00"
+    official_end_local: "2018-01-07 23:59"
+    timezone: "America/New_York"
+    duration_hours: INFORMATION_MISSING  # 11 days = 264h nominal, need DST check
+    boundary_status: VERIFIED_OFFICIAL
+    official_source: "PJM cold snap report (Dec 28, 2017 – Jan 7, 2018)"
+    data_available: false
+
+  - event_id: E2022_ELLIOTT
+    official_name: "Winter Storm Elliott"
+    official_start_local: "2022-12-23 00:00"
+    official_end_local: "2022-12-26 23:59"
+    timezone: "America/New_York"
+    duration_hours: 96  # nominal, need DST check
+    boundary_status: VERIFIED_OFFICIAL
+    official_source: "PJM Winter Storm Elliott event analysis"
+    data_available: false
+
+evaluation_rules:
+  - Event selection is independent of model forecast errors.
+  - Official PJM named-event windows form the primary event set.
+  - ERA5 percentile rule resolves E2015 boundaries as sensitivity.
+  - Contiguous event hours are serially dependent.
+  - Each event is an independent evaluation unit.
+  - Timestamps stored in America/New_York and UTC.
+
+data_requirements:
+  total_years: "2010–2022 (13 years)"
+  expected_utc_hours: 113952
+  pjm_actual_load: "2010-01-01 through 2022-12-31, RTO hourly metered"
+  pjm_forecasts: "2010-01-01 through 2022-12-31, day-ahead vintage"
+  status:
+    "2010-2014": "AVAILABLE (already downloaded)"
+    "2015-2022": "NEEDS DOWNLOAD from PJM Data Miner 2"
