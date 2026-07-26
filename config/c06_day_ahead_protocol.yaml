@@ -1,0 +1,87 @@
+# C06A — Day-Ahead Forecast Protocol
+# Branch: C06-day-ahead
+# This protocol defines a leakage-free, like-for-like day-ahead forecasting setup.
+# ERA5 is retained ONLY as a retrospective oracle benchmark, NOT as operational input.
+
+protocol:
+  name: "Strict Day-Ahead Protocol"
+  version: "1.0"
+  branch: "C06-day-ahead"
+
+  forecast_origin:
+    rule: "12:00 America/New_York (EPT) on day D-1"
+    description: >
+      For each operating date D, all predictions are issued from a single
+      forecast origin at 12:00 EPT on the day before the operating day.
+      Target-hour leads range approximately from 12 to 35 hours.
+
+  target_period:
+    rule: "All PJM hourly load intervals on operating date D"
+    timezone: "America/New_York"
+    dst_handling: >
+      Do NOT delete or duplicate daylight-saving transition hours.
+      Operating days may contain 23, 24, or 25 hourly observations.
+
+  load_information_cutoff:
+    rule: "Latest usable metered load = forecast_origin - 1 hour"
+    description: >
+      No predictor may use a load observation with timestamp
+      later than (origin - 1h).
+
+  pjm_comparator_vintage:
+    selection: >
+      For each target operating date, select the LATEST PJM forecast
+      created at or before the 12:00 EPT origin.
+    constraints:
+      - Created no more than 12 hours before origin
+      - Use only forecast values from the selected vintage
+      - Never select a later revision separately for each target hour
+      - Exclude operating day if no qualifying complete vintage exists
+
+  weather_forecast_vintage:
+    rule: "weather_issue_time <= forecast_origin"
+    description: >
+      All target-hour weather values must come from ONE forecast vintage
+      available by the origin. Do NOT select the "best" cycle after
+      inspecting realized errors.
+
+weather_tracks:
+  # Track 1: Operational — archived NDFD forecasts
+  operational:
+    source: "NDFD (National Digital Forecast Database)"
+    provider: "NOAA/NWS"
+    description: >
+      Archived operational gridded forecasts produced by the National
+      Weather Service, available for the full study period.
+      These represent the actual weather information available to
+      operational forecasters at each forecast origin.
+    status: "To be downloaded"
+    classification: "OPERATIONAL — primary weather input for C06 models"
+
+  # Track 2: Oracle — ERA5 retrospective reanalysis
+  oracle:
+    source: "ERA5 (ECMWF Reanalysis v5)"
+    provider: "ECMWF Copernicus CDS"
+    description: >
+      Same-hour retrospective reanalysis weather. Provides an upper-bound
+      oracle benchmark: what performance is achievable with perfect
+      weather knowledge. MUST NOT be described as operational input.
+    status: "Already downloaded (data/raw/era5/)"
+    classification: "ORACLE — retrospective benchmark only, NOT operational"
+
+  # Track 3: Sensitivity — GEFSv12 reforecasts
+  sensitivity:
+    source: "GEFSv12 Reforecasts"
+    provider: "NOAA"
+    description: >
+      Retrospective forecasts from a fixed-model system, generated
+      once daily at 00 UTC. May serve as a hindcast sensitivity
+      analysis but NOT as the primary operational input because
+      they are not the actual historical forecast vintages.
+    status: "Not yet downloaded"
+    classification: "SENSITIVITY — hindcast analysis, secondary"
+
+weather_classification_rules:
+  - ERA5: NEVER described as operational. It is retrospective reanalysis.
+  - NDFD: The operational primary. Represents actual forecast information.
+  - GEFSv12: Sensitivity only. Fixed-model reforecasts, not actual vintages.
