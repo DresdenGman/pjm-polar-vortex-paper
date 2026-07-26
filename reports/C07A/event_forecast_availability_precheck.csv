@@ -1,0 +1,5 @@
+event_id,evaluation_scope,expected_hours,pjm_forecast_hours,same_vintage_integrity,missing_dates,status
+E2014_PV1,full_window,72,63,True,"2014-01-06 00:00:00,2014-01-07 00:00:00,2014-01-08 00:00:00",PJM_COMPARATOR_INCOMPLETE
+E2015_COLD_anchor,full_window,24,24,True,NONE,READY
+E2018_SNAP,full_window,264,264,True,NONE,READY
+E2022_ELLIOTT,full_window,96,96,True,NONE,READY
