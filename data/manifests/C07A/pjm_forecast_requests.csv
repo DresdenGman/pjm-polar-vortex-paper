@@ -1,0 +1,10 @@
+year,filename,rows,checksum,source
+2015,pjm_forecast_2015.csv,87351,ab0f5b770c9c9996,PJM Data Miner 2 load_frcstd_hist
+2016,pjm_forecast_2016.csv,81936,e9fd7ec876f59b6e,PJM Data Miner 2 load_frcstd_hist
+2017,pjm_forecast_2017.csv,87349,52837102555fadad,PJM Data Miner 2 load_frcstd_hist
+2018,pjm_forecast_2018.csv,68645,82393d0d3cb5c2a4,PJM Data Miner 2 load_frcstd_hist
+2019,pjm_forecast_2019.csv,65414,8f0a65027a5e3c3c,PJM Data Miner 2 load_frcstd_hist
+2020,pjm_forecast_2020.csv,65623,eca720e8bd3a201e,PJM Data Miner 2 load_frcstd_hist
+2021,pjm_forecast_2021.csv,65376,5c02cec0b41a0070,PJM Data Miner 2 load_frcstd_hist
+2022,pjm_forecast_2022.csv,65263,28ad8707b43be312,PJM Data Miner 2 load_frcstd_hist
+TOTAL_2015_2022,,586957,,
