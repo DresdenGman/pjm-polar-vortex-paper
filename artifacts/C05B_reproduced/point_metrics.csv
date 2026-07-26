@@ -1,0 +1,7 @@
+model,window,n_hours,mae_mw,rmse_mw
+linear_regression,full_year,8760,2353.9,3027.1
+linear_regression,polar_vortex,72,4248.3,5099.8
+linear_regression,summer_peak,72,4034.0,5002.7
+gboost_point,full_year,8760,720.9,993.6
+gboost_point,polar_vortex,72,1705.2,2036.6
+gboost_point,summer_peak,72,821.8,1110.7

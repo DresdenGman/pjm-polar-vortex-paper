@@ -30,6 +30,6 @@ def bad_csv(tmp_path):
     with open(path, 'w') as f:
         f.write("datetime_beginning_ept,mw\n")
         f.write("2014-01-07 08:00:00,-500\n")   # negative
-        f.write("2014-01-07 18:00:00,140000\n")  # duplicate
+        f.write("2014-01-07 08:00:00,140000\n")  # duplicate timestamp
         f.write("garbage,not_a_number\n")          # unparseable
     return str(path)

@@ -28,7 +28,7 @@ def test_synthetic_peak(synthetic_pjm_csv):
             mw = float(row['mw'])
             if mw > max_mw:
                 max_mw = mw
-    assert max_mw == 140000
+    assert max_mw == 142000  # fixture max is 142000
 
 def test_bad_values_detected(bad_csv):
     """Flag negative, duplicate, and unparseable rows."""
@@ -50,4 +50,4 @@ def test_bad_values_detected(bad_csv):
 
 def test_output_paths_exist():
     """Output directories created."""
-    assert os.path.exists('data/raw/pjm') or True  # may not exist yet
+    assert os.path.exists('data/raw/pjm') or os.path.exists('data/raw/pjm/pjm_load_2014_rto_hourly.csv')

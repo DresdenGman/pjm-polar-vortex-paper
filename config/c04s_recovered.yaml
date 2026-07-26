@@ -1,0 +1,106 @@
+# C04S Recovered Configuration
+# Generated: 2026-07-26
+# Branch: C05-epsr-rebuild
+# Purpose: Centralized hyperparameters for C05B method-faithful pipeline reconstruction
+# All parameters documented in reports/C05B/hyperparameter_provenance.md
+# MISSING = recovery assumption; NOT a recovered C04S setting
+
+data:
+  modeling_features_path: "data/processed/modeling_features_2010_2014.csv"
+  train_start: "2010-01-01"
+  train_end: "2013-12-31"
+  test_start: "2014-01-01"
+  test_end: "2014-12-31"
+  max_lookback_hours: 168
+  target_column: "actual_load_mw"
+  timestamp_column: "timestamp_ept"
+
+features:
+  # From paper.tex Section 3, verified against modeling_features CSV columns
+  calendar:
+    - "hour"
+    - "day_of_week"
+    - "month"
+  load_lags:
+    - "load_lag_1h"
+    - "load_lag_24h"
+    - "load_lag_168h"
+  load_rolling:
+    - "load_rolling_mean_24h"
+    - "load_rolling_mean_168h"
+    - "load_rolling_std_24h"
+  weather:
+    - "t_f"
+    - "wind_chill"
+    - "wind_speed"
+    - "hdh"
+    - "cdh"
+
+models:
+  gboost:
+    algorithm: "sklearn.ensemble.HistGradientBoostingRegressor"
+    max_iter:
+      value: 300
+      provenance: "task07a_validity_audit.md"
+    max_depth:
+      value: 6
+      provenance: "task07a_validity_audit.md"
+    random_state:
+      value: null
+      provenance: "MISSING — no record found; set to 42 as recovery default"
+      recovery_value: 42
+    learning_rate:
+      value: 0.1
+      provenance: "MISSING — no record found; using sklearn 1.7.2 default"
+      recovery_notes: "This is a recovery assumption, NOT a recovered C04S setting"
+    library_version:
+      value: "1.7.2"
+      provenance: "MISSING — original sklearn version unknown; using recovery environment"
+
+  qr_gbt:
+    algorithm: "sklearn.ensemble.HistGradientBoostingRegressor"
+    loss: "quantile"
+    max_iter:
+      value: 300
+      provenance: "task07b_quantile_forecasting_report.md"
+    max_depth:
+      value: 6
+      provenance: "task07b_quantile_forecasting_report.md"
+    random_state:
+      value: 42
+      provenance: "task07b_quantile_forecasting_report.md"
+    learning_rate:
+      value: 0.1
+      provenance: "MISSING — no record found; using sklearn 1.7.2 default"
+      recovery_notes: "This is a recovery assumption, NOT a recovered C04S setting"
+    quantiles: [0.01, 0.05, 0.10, 0.50, 0.90, 0.95, 0.99]
+    quantiles_provenance: "task07b report + prediction CSV column names"
+    library_version:
+      value: "1.7.2"
+      provenance: "MISSING — original sklearn version unknown; using recovery environment"
+
+  linear_regression:
+    algorithm: "sklearn.linear_model.LinearRegression"
+    random_state:
+      value: null
+      provenance: "No random state applicable for LinearRegression"
+    library_version:
+      value: "1.7.2"
+      provenance: "MISSING"
+
+evaluation:
+  windows:
+    full_year:
+      start: "2014-01-01"
+      end: "2014-12-31"
+    polar_vortex:
+      start: "2014-01-06"
+      end: "2014-01-08"
+    summer_peak:
+      start: "2014-06-16"
+      end: "2014-06-18"
+
+output:
+  artifacts_dir: "artifacts/C05B_reproduced"
+  predictions_csv: "artifacts/C05B_reproduced/predictions.csv"
+  metrics_csv: "artifacts/C05B_reproduced/metrics.csv"
