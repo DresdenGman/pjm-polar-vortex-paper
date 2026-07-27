@@ -1,0 +1,46 @@
+fold_id,model,alpha,val_mae,params
+Y2014,naive_7d,,,
+Y2014,naive_latest,,,
+Y2014,ridge,100.0,5214.460418468885,
+Y2014,hist_gbr,,4243.132358772876,"{'l2_regularization': 0.0, 'learning_rate': 0.1, 'max_iter': 400, 'max_leaf_nodes': 31, 'min_samples_leaf': 50}"
+Y2014,extra_trees,,4176.300038606924,"{'max_depth': None, 'max_features': 0.7, 'min_samples_leaf': 1}"
+Y2015,naive_7d,,,
+Y2015,naive_latest,,,
+Y2015,ridge,100.0,5311.030345380286,
+Y2015,hist_gbr,,4235.019212123656,"{'l2_regularization': 1.0, 'learning_rate': 0.1, 'max_iter': 200, 'max_leaf_nodes': 31, 'min_samples_leaf': 50}"
+Y2015,extra_trees,,4431.90921716146,"{'max_depth': 20, 'max_features': 0.7, 'min_samples_leaf': 1}"
+Y2016,naive_7d,,,
+Y2016,naive_latest,,,
+Y2016,ridge,100.0,5171.318828772019,
+Y2016,hist_gbr,,3860.355870271311,"{'l2_regularization': 10.0, 'learning_rate': 0.1, 'max_iter': 400, 'max_leaf_nodes': 15, 'min_samples_leaf': 20}"
+Y2016,extra_trees,,3929.007686689498,"{'max_depth': None, 'max_features': 0.7, 'min_samples_leaf': 1}"
+Y2017,naive_7d,,,
+Y2017,naive_latest,,,
+Y2017,ridge,100.0,5473.824970966267,
+Y2017,hist_gbr,,3943.1231557254937,"{'l2_regularization': 0.0, 'learning_rate': 0.1, 'max_iter': 400, 'max_leaf_nodes': 31, 'min_samples_leaf': 20}"
+Y2017,extra_trees,,3854.824479163835,"{'max_depth': 20, 'max_features': 0.7, 'min_samples_leaf': 1}"
+Y2018,naive_7d,,,
+Y2018,naive_latest,,,
+Y2018,ridge,1000.0,5347.395336571345,
+Y2018,hist_gbr,,3917.150341974465,"{'l2_regularization': 0.0, 'learning_rate': 0.1, 'max_iter': 400, 'max_leaf_nodes': 31, 'min_samples_leaf': 50}"
+Y2018,extra_trees,,3851.3342231940596,"{'max_depth': None, 'max_features': 0.7, 'min_samples_leaf': 1}"
+Y2019,naive_7d,,,
+Y2019,naive_latest,,,
+Y2019,ridge,1000.0,5630.407728101096,
+Y2019,hist_gbr,,4292.22269188511,"{'l2_regularization': 10.0, 'learning_rate': 0.05, 'max_iter': 400, 'max_leaf_nodes': 31, 'min_samples_leaf': 20}"
+Y2019,extra_trees,,4222.595298153031,"{'max_depth': 20, 'max_features': 0.7, 'min_samples_leaf': 1}"
+Y2020,naive_7d,,,
+Y2020,naive_latest,,,
+Y2020,ridge,1000.0,5321.9821750646215,
+Y2020,hist_gbr,,3740.3129202909995,"{'l2_regularization': 1.0, 'learning_rate': 0.1, 'max_iter': 200, 'max_leaf_nodes': 31, 'min_samples_leaf': 50}"
+Y2020,extra_trees,,3681.2089189299877,"{'max_depth': None, 'max_features': 0.7, 'min_samples_leaf': 1}"
+Y2021,naive_7d,,,
+Y2021,naive_latest,,,
+Y2021,ridge,1000.0,4837.739853238823,
+Y2021,hist_gbr,,3342.998070305431,"{'l2_regularization': 1.0, 'learning_rate': 0.1, 'max_iter': 400, 'max_leaf_nodes': 31, 'min_samples_leaf': 50}"
+Y2021,extra_trees,,3325.0156943223274,"{'max_depth': 20, 'max_features': 0.7, 'min_samples_leaf': 1}"
+Y2022,naive_7d,,,
+Y2022,naive_latest,,,
+Y2022,ridge,1000.0,5173.729296342105,
+Y2022,hist_gbr,,3731.4331649854407,"{'l2_regularization': 10.0, 'learning_rate': 0.1, 'max_iter': 400, 'max_leaf_nodes': 15, 'min_samples_leaf': 20}"
+Y2022,extra_trees,,3636.504485428464,"{'max_depth': None, 'max_features': 0.7, 'min_samples_leaf': 1}"

@@ -1,0 +1,6 @@
+fold_id,model,alpha,val_mae,params
+Y2016,naive_7d,,,
+Y2016,naive_latest,,,
+Y2016,ridge,100.0,5171.318828772019,
+Y2016,hist_gbr,,3860.355870271311,"{'l2_regularization': 10.0, 'learning_rate': 0.1, 'max_iter': 400, 'max_leaf_nodes': 15, 'min_samples_leaf': 20}"
+Y2016,extra_trees,,3929.007686689498,"{'max_depth': None, 'max_features': 0.7, 'min_samples_leaf': 1}"
