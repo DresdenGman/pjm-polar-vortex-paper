@@ -1,0 +1,5 @@
+event_id,registered_scope,expected_hours,actual_available_hours,pjm_available_hours,affected_operating_dates,complete_operating_dates,unavailable_operating_dates,same_vintage_integrity,missing_reason,boundary_status,comparator_status
+E2014_PV1,full_window,72,72,63,3,0,0,True,NO_COMPLETE_VINTAGE,VERIFIED_OFFICIAL,PARTIAL_PROTOCOL_EXCLUSION
+E2015_COLD_anchor,full_window,24,24,24,0,1,0,True,NONE,BOUNDARY_PENDING,COMPLETE
+E2018_SNAP,full_window,264,264,264,0,11,0,True,NONE,VERIFIED_OFFICIAL,COMPLETE
+E2022_ELLIOTT,full_window,96,96,96,0,4,0,True,NONE,VERIFIED_OFFICIAL,COMPLETE
