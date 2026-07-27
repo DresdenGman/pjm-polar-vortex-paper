@@ -1,130 +1,148 @@
-"""C06A-PRELOAD: Build day-ahead load and calendar features (2010-2014).
-
-No weather variables. No GFS dependency. Fixed 12:00 EPT D-1 origin.
-Preserves DST integrity: both fall-back hours, 23/25-hour days.
-"""
-import argparse
-import sys
+"""C08A: Fast vectorized day-ahead load feature builder."""
+import argparse, numpy as np, pandas as pd
 from pathlib import Path
 
-import pandas as pd
-import numpy as np
+def build(panel_path, output_path):
+    p = pd.read_csv(panel_path, low_memory=False)
+    p["target_utc"] = pd.to_datetime(p["target_time_utc"], utc=True)
+    p["origin_utc"] = pd.to_datetime(p["forecast_origin_utc"], utc=True, errors="coerce")
+    p["op_date"] = pd.to_datetime(p["operating_date"])
 
+    n = len(p)
+    print(f"Panel: {n} rows")
 
-def build_day_ahead_dataset(
-    load_path: str,
-    pjm_forecast_path: str,
-    output_path: str,
-) -> pd.DataFrame:
-    """Construct day-ahead load/calendar dataset with fixed forecast origin."""
+    # Build result with calendar and provenance columns
+    result = p[[
+        "operating_date", "target_time_local", "target_time_utc",
+        "local_utc_offset", "dst_fold", "calendar_hour", "day_of_week",
+        "month", "year", "weekend_indicator", "holiday_indicator",
+        "expected_hours_for_operating_date",
+        "actual_load_mw", "actual_load_available", "actual_missing_reason",
+        "pjm_forecast_mw", "pjm_forecast_available", "pjm_missing_reason",
+        "selected_vintage_id", "selected_evaluated_at_utc", "vintage_age_hours",
+    ]].copy()
 
-    # Load metered load
-    load = pd.read_csv(load_path)
-    load["utc"] = pd.to_datetime(load["datetime_beginning_utc"])
-    # Convert to America/New_York for local calendar operations
-    load["ept"] = load["utc"].dt.tz_localize("UTC").dt.tz_convert("America/New_York")
-    load = load.sort_values("utc").reset_index(drop=True)
+    result["forecast_origin_utc"] = p["forecast_origin_utc"]
+    result["dst_indicator"] = (p["local_utc_offset"].astype(float) != -5).astype(int)
 
-    # Load PJM forecast
-    pjm = pd.read_csv(pjm_forecast_path)
-    pjm["utc"] = pd.to_datetime(pjm["forecast_hour_beginning_utc"])
-    pjm["created_ept"] = pd.to_datetime(pjm["evaluated_at_ept"])
+    # Cutoff
+    cutoff = p["origin_utc"] - pd.Timedelta(hours=1)
+    cutoff[p["origin_utc"].isna()] = pd.NaT
+    result["load_information_cutoff_utc"] = cutoff
 
-    # Build rows: one per target UTC hour
-    rows = []
+    # Forecast horizon (only where origin valid)
+    valid_o = p["origin_utc"].notna()
+    fh = pd.Series(np.nan, index=p.index)
+    fh[valid_o] = (p.loc[valid_o, "target_utc"] - p.loc[valid_o, "origin_utc"]).dt.total_seconds() / 3600
+    result["forecast_horizon_hours"] = fh
 
-    for _, lr in load.iterrows():
-        target_utc = lr["utc"]
-        target_ept = lr["ept"]
+    # --- LOAD FEATURES via timestamp-indexed merge ---
+    # Build a lookup: target_utc (tz-naive int64) -> actual_load_mw
+    p["utc_int"] = p["target_utc"].astype("int64")
+    load_lookup = p[["utc_int", "actual_load_mw"]].drop_duplicates("utc_int").set_index("utc_int")
 
-        # Operating date (local calendar date)
-        op_date = target_ept.date()
+    # 1) load_origin_minus_1h: load at origin - 1h
+    src_utc = p["origin_utc"] - pd.Timedelta(hours=1)
+    result["load_origin_minus_1h_source_utc"] = src_utc
+    # Merge via int64 nanosecond epoch
+    src_df = pd.DataFrame({"key": src_utc.astype("int64").values, "idx": p.index})
+    src_df = src_df[src_df["key"].notna()]
+    merged = src_df.set_index("key").join(load_lookup, how="left")
+    result["load_origin_minus_1h"] = np.nan
+    result.loc[merged["idx"].values, "load_origin_minus_1h"] = merged["actual_load_mw"].values
+    result["load_origin_minus_1h_available"] = result["load_origin_minus_1h"].notna()
+    result["load_origin_minus_1h_missing_reason"] = np.where(
+        result["load_origin_minus_1h_available"], "NONE", "SOURCE_DATA_MISSING"
+    )
 
-        # Forecast origin: 12:00 EPT on D-1
-        origin_ept = pd.Timestamp(op_date) - pd.Timedelta(days=1)
-        origin_ept = origin_ept.replace(hour=12, minute=0, second=0)
-        origin_utc = origin_ept.tz_localize("America/New_York").tz_convert("UTC")
+    # 2) Same-hour lags (1d, 2d, 7d, 14d)
+    for lag_name, lag_h in [("1d", 24), ("2d", 48), ("7d", 168), ("14d", 336)]:
+        col = f"load_same_hour_{lag_name}"
+        src_col = f"{col}_source_utc"
+        avail_col = f"{col}_available"
+        reason_col = f"{col}_missing_reason"
 
-        # Forecast horizon
-        horizon_hours = (target_utc - origin_utc.tz_localize(None)).total_seconds() / 3600
+        src_utc = p["target_utc"] - pd.Timedelta(hours=lag_h)
+        result[src_col] = src_utc
 
-        # Load at origin - 1h
-        load_cutoff = origin_utc.tz_localize(None) - pd.Timedelta(hours=1)
-        origin_load = load[load["utc"] == load_cutoff]
-        origin_minus_1h = origin_load["mw"].iloc[0] if len(origin_load) > 0 else np.nan
-
-        # Same-hour lags
-        for lag_h, lag_name in [(24, "1d"), (48, "2d"), (168, "7d"), (336, "14d")]:
-            lag_ts = target_utc - pd.Timedelta(hours=lag_h)
-            lag_row = load[load["utc"] == lag_ts]
-            rows.append({"target_utc": target_utc, "feature": f"load_same_hour_{lag_name}",
-                         "value": lag_row["mw"].iloc[0] if len(lag_row) > 0 else np.nan})
-            # Will pivot later
-
-        # Previous day peak and mean (from D-1, before origin)
-        prev_day = target_ept.date() - pd.Timedelta(days=1)
-        prev_loads = load[load["ept"].dt.date == prev_day]
-        prev_peak = prev_loads["mw"].max() if len(prev_loads) > 0 else np.nan
-        prev_mean = prev_loads["mw"].mean() if len(prev_loads) > 0 else np.nan
-
-        # PJM forecast match
-        pjm_match = pjm[pjm["utc"] == target_utc]
-        pjm_fcast = pjm_match["day_ahead_forecast_mw"].iloc[0] if len(pjm_match) > 0 else np.nan
-        pjm_created = pjm_match["created_ept"].iloc[0] if len(pjm_match) > 0 else pd.NaT
-
-        # Calendar features
-        dst_flag = 1 if target_ept.dst() else 0
-        weekend = 1 if target_ept.dayofweek >= 5 else 0
-
-        rows.append({
-            "operating_date": op_date,
-            "target_time_local": target_ept,
-            "target_time_utc": target_utc,
-            "local_utc_offset": target_ept.utcoffset().total_seconds() / 3600,
-            "dst_fold": 0,  # TODO: detect fold for fall-back hours
-            "forecast_origin_local": origin_ept,
-            "forecast_origin_utc": origin_utc,
-            "forecast_horizon_hours": round(horizon_hours, 2),
-            "actual_load_mw": lr["mw"],
-            "pjm_forecast_mw": pjm_fcast,
-            "pjm_forecast_creation_time_utc": pjm_created,
-            "pjm_missing": 1 if pd.isna(pjm_fcast) else 0,
-            "pjm_exclusion_reason": "DST_FALLBACK_COLLAPSED" if pd.isna(pjm_fcast) else "",
-            "load_origin_minus_1h": origin_minus_1h,
-            "load_same_hour_1d": np.nan,  # filled below
-            "load_same_hour_2d": np.nan,
-            "load_same_hour_7d": np.nan,
-            "load_same_hour_14d": np.nan,
-            "previous_available_daily_peak": prev_peak,
-            "previous_available_daily_mean": prev_mean,
-            "calendar_hour": target_ept.hour,
-            "day_of_week": target_ept.dayofweek,
-            "month": target_ept.month,
-            "weekend_indicator": weekend,
-            "holiday_indicator": 0,  # TODO: add holiday calendar
-            "dst_indicator": dst_flag,
+        # Merge via int64
+        src_df = pd.DataFrame({
+            "key": src_utc.astype("int64").values,
+            "idx": p.index,
+            "cutoff_int": cutoff.astype("int64").values,
         })
+        merged = src_df.set_index("key").join(load_lookup, how="left").reset_index()
+        merged = merged.rename(columns={"actual_load_mw": col})
 
-    df = pd.DataFrame(rows)
-    print(f"Built {len(df)} target-hour rows")
-    print(f"  PJM missing: {df['pjm_missing'].sum()} hours")
-    print(f"  DST spring-forward days: {(df.groupby('operating_date').size() == 23).sum()}")
-    print(f"  DST fall-back days: {(df.groupby('operating_date').size() == 25).sum()}")
+        result[col] = np.nan
+        result.loc[merged["idx"].values, col] = merged[col].values
 
-    return df
+        # Nullify if after cutoff
+        after = merged["key"] > merged["cutoff_int"]
+        bad_idx = merged.loc[after, "idx"].values
+        result.loc[bad_idx, col] = np.nan
+
+        result[avail_col] = result[col].notna()
+
+        reasons = np.full(n, "SOURCE_DATA_MISSING", dtype=object)
+        reasons[result[avail_col].values] = "NONE"
+        reasons[bad_idx] = "AFTER_ORIGIN_CUTOFF"
+        result[reason_col] = reasons
+
+        n_avail = result[avail_col].sum()
+        n_cutoff = (result[reason_col] == "AFTER_ORIGIN_CUTOFF").sum()
+        print(f"  {col}: {n_avail}/{n} avail, {n_cutoff} after-cutoff")
+
+    # 3) Previous daily peak and mean (fast groupby)
+    # For each row, find the latest complete prior day
+    daily_stats = p.groupby("op_date")["actual_load_mw"].agg(["max", "mean", "count"])
+    daily_stats.columns = ["peak", "mean", "count"]
+    daily_stats["complete"] = daily_stats["count"] == p.groupby("op_date").size()
+
+    # For each operating date, the previous complete day's stats
+    op_dates = sorted(daily_stats.index)
+    prev_peak_map = {}
+    prev_mean_map = {}
+    prev_date_map = {}
+    last_complete_peak = np.nan
+    last_complete_mean = np.nan
+    last_complete_date = None
+    for od in op_dates:
+        prev_date_map[od] = last_complete_date
+        prev_peak_map[od] = last_complete_peak
+        prev_mean_map[od] = last_complete_mean
+        if daily_stats.loc[od, "complete"]:
+            last_complete_peak = daily_stats.loc[od, "peak"]
+            last_complete_mean = daily_stats.loc[od, "mean"]
+            last_complete_date = str(od.date())
+
+    result["previous_available_daily_operating_date"] = p["op_date"].map(prev_date_map)
+    result["previous_available_daily_peak"] = p["op_date"].map(prev_peak_map)
+    result["previous_available_daily_mean"] = p["op_date"].map(prev_mean_map)
+
+    for f in ["previous_available_daily_peak", "previous_available_daily_mean"]:
+        result[f"{f}_available"] = result[f].notna()
+        result[f"{f}_missing_reason"] = np.where(result[f].notna(), "NONE", "INSUFFICIENT_HISTORY")
+
+    # Save
+    result.to_csv(output_path, index=False)
+    print(f"Saved {len(result)} rows → {output_path}")
+
+    # Summary
+    for col in ["load_origin_minus_1h", "load_same_hour_1d", "load_same_hour_2d",
+                "load_same_hour_7d", "load_same_hour_14d",
+                "previous_available_daily_peak", "previous_available_daily_mean"]:
+        a = result[f"{col}_available"].sum() if f"{col}_available" in result.columns else result[col].notna().sum()
+        print(f"  {col}: {a}/{n}")
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--load", required=True)
-    parser.add_argument("--pjm-forecast", required=True)
-    parser.add_argument("--output", required=True)
-    args = parser.parse_args()
-
-    df = build_day_ahead_dataset(args.load, args.pjm_forecast, args.output)
-    Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(args.output, index=False)
-    print(f"Saved to {args.output}")
+    p = argparse.ArgumentParser()
+    p.add_argument("--panel", required=True)
+    p.add_argument("--output", required=True)
+    a = p.parse_args()
+    Path(a.output).parent.mkdir(parents=True, exist_ok=True)
+    build(a.panel, a.output)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,74 @@
+# C08A — Annual Expanding-Window Fold Registry
+# Frozen — do not modify after first model training.
+
+folds:
+  Y2014:
+    train_start: "2010-01-01"
+    train_end: "2012-12-31"
+    validation_start: "2013-01-01"
+    validation_end: "2013-12-31"
+    test_start: "2014-01-01"
+    test_end: "2014-12-31"
+  Y2015:
+    train_start: "2010-01-01"
+    train_end: "2013-12-31"
+    validation_start: "2014-01-01"
+    validation_end: "2014-12-31"
+    test_start: "2015-01-01"
+    test_end: "2015-12-31"
+  Y2016:
+    train_start: "2010-01-01"
+    train_end: "2014-12-31"
+    validation_start: "2015-01-01"
+    validation_end: "2015-12-31"
+    test_start: "2016-01-01"
+    test_end: "2016-12-31"
+  Y2017:
+    train_start: "2010-01-01"
+    train_end: "2015-12-31"
+    validation_start: "2016-01-01"
+    validation_end: "2016-12-31"
+    test_start: "2017-01-01"
+    test_end: "2017-12-31"
+  Y2018:
+    train_start: "2010-01-01"
+    train_end: "2016-12-31"
+    validation_start: "2017-01-01"
+    validation_end: "2017-12-31"
+    test_start: "2018-01-01"
+    test_end: "2018-12-31"
+  Y2019:
+    train_start: "2010-01-01"
+    train_end: "2017-12-31"
+    validation_start: "2018-01-01"
+    validation_end: "2018-12-31"
+    test_start: "2019-01-01"
+    test_end: "2019-12-31"
+  Y2020:
+    train_start: "2010-01-01"
+    train_end: "2018-12-31"
+    validation_start: "2019-01-01"
+    validation_end: "2019-12-31"
+    test_start: "2020-01-01"
+    test_end: "2020-12-31"
+  Y2021:
+    train_start: "2010-01-01"
+    train_end: "2019-12-31"
+    validation_start: "2020-01-01"
+    validation_end: "2020-12-31"
+    test_start: "2021-01-01"
+    test_end: "2021-12-31"
+  Y2022:
+    train_start: "2010-01-01"
+    train_end: "2020-12-31"
+    validation_start: "2021-01-01"
+    validation_end: "2021-12-31"
+    test_start: "2022-01-01"
+    test_end: "2022-12-31"
+
+event_blackouts:
+  E2018_SNAP:
+    early_hours: "2017-12-28 to 2017-12-31"
+    fold_blackout: Y2018
+    blackout_reason: "Event begins in Y2017 test. Y2018 validation/refit must exclude Dec 28-31 2017 event hours."
+    blackout_timestamps: "2017-12-28 00:00 to 2017-12-31 23:59 EPT"
