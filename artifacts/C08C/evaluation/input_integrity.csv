@@ -1,0 +1,4 @@
+check,expected,actual,pass
+total_rows,78888,78888,True
+unique_target,True,True,True
+actual_load_not_null,78888,78888,True
