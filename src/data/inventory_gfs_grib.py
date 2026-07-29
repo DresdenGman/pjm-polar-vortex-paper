@@ -17,7 +17,7 @@ def inventory(grib_path):
             "forecast_hour": msg.forecastTime,
             "data_date": msg.dataDate,
             "data_time": msg.dataTime,
-            "valid_time": f"{msg.validDate} {msg.validTime:04d}",
+            "valid_time": "",  # skip problematic key
             "Ni": msg.Ni,
             "Nj": msg.Nj,
             "lat_first": msg.latitudeOfFirstGridPointInDegrees,
