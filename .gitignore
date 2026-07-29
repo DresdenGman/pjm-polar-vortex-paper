@@ -30,6 +30,17 @@ __pycache__/
 *.nc4
 *.grib
 *.grib2
+*.tar
+*.tar.gz
+*.zip
+reports/C09A/incoming/
+reports/C09A/reference_run_1/
+reports/C09A/reference_run_2/
+artifacts/C08C/probabilistic_predictions_2014_2022.csv
+artifacts/C08C/checkpoints/
+artifacts/C08C/_eval.py
+reports/C09A/logs/
+reports/C09A/reference_run_*/
 
 # Local raw/intermediate data
 data/raw/
