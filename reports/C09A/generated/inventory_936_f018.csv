@@ -1,0 +1,359 @@
+member,short_name,name,param_id,level,type_of_level,units,forecast_hour,data_date,data_time,valid_time,Ni,Nj,lat_first,lon_first,lat_last,lon_last,i_direction_increment,j_direction_increment,scanning_mode
+1,u,U component of wind,131,0,unknown,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+2,v,V component of wind,132,0,unknown,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+3,unknown,unknown,0,0,unknown,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+4,gust,Wind speed (gust),260065,0,surface,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+5,gh,Geopotential height,156,10,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+6,t,Temperature,130,10,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+7,r,Relative humidity,157,10,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+8,u,U component of wind,131,10,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+9,v,V component of wind,132,10,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+10,absv,Absolute vorticity,3041,10,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+11,unknown,unknown,0,10,isobaricInhPa,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+12,gh,Geopotential height,156,20,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+13,t,Temperature,130,20,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+14,u,U component of wind,131,20,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+15,v,V component of wind,132,20,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+16,absv,Absolute vorticity,3041,20,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+17,unknown,unknown,0,20,isobaricInhPa,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+18,gh,Geopotential height,156,30,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+19,t,Temperature,130,30,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+20,r,Relative humidity,157,30,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+21,u,U component of wind,131,30,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+22,v,V component of wind,132,30,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+23,absv,Absolute vorticity,3041,30,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+24,unknown,unknown,0,30,isobaricInhPa,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+25,gh,Geopotential height,156,50,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+26,t,Temperature,130,50,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+27,r,Relative humidity,157,50,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+28,u,U component of wind,131,50,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+29,v,V component of wind,132,50,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+30,absv,Absolute vorticity,3041,50,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+31,unknown,unknown,0,50,isobaricInhPa,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+32,gh,Geopotential height,156,70,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+33,t,Temperature,130,70,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+34,r,Relative humidity,157,70,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+35,u,U component of wind,131,70,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+36,v,V component of wind,132,70,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+37,absv,Absolute vorticity,3041,70,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+38,unknown,unknown,0,70,isobaricInhPa,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+39,gh,Geopotential height,156,100,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+40,t,Temperature,130,100,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+41,r,Relative humidity,157,100,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+42,w,Vertical velocity,135,100,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+43,u,U component of wind,131,100,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+44,v,V component of wind,132,100,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+45,absv,Absolute vorticity,3041,100,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+46,clwmr,Cloud mixing ratio,260018,100,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+47,unknown,unknown,0,100,isobaricInhPa,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+48,gh,Geopotential height,156,150,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+49,t,Temperature,130,150,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+50,r,Relative humidity,157,150,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+51,w,Vertical velocity,135,150,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+52,u,U component of wind,131,150,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+53,v,V component of wind,132,150,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+54,absv,Absolute vorticity,3041,150,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+55,clwmr,Cloud mixing ratio,260018,150,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+56,gh,Geopotential height,156,200,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+57,t,Temperature,130,200,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+58,r,Relative humidity,157,200,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+59,w,Vertical velocity,135,200,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+60,u,U component of wind,131,200,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+61,v,V component of wind,132,200,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+62,absv,Absolute vorticity,3041,200,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+63,clwmr,Cloud mixing ratio,260018,200,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+64,gh,Geopotential height,156,250,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+65,t,Temperature,130,250,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+66,r,Relative humidity,157,250,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+67,w,Vertical velocity,135,250,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+68,u,U component of wind,131,250,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+69,v,V component of wind,132,250,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+70,absv,Absolute vorticity,3041,250,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+71,clwmr,Cloud mixing ratio,260018,250,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+72,gh,Geopotential height,156,300,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+73,t,Temperature,130,300,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+74,r,Relative humidity,157,300,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+75,w,Vertical velocity,135,300,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+76,u,U component of wind,131,300,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+77,v,V component of wind,132,300,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+78,absv,Absolute vorticity,3041,300,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+79,clwmr,Cloud mixing ratio,260018,300,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+80,gh,Geopotential height,156,350,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+81,t,Temperature,130,350,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+82,r,Relative humidity,157,350,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+83,w,Vertical velocity,135,350,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+84,u,U component of wind,131,350,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+85,v,V component of wind,132,350,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+86,absv,Absolute vorticity,3041,350,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+87,clwmr,Cloud mixing ratio,260018,350,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+88,gh,Geopotential height,156,400,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+89,t,Temperature,130,400,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+90,r,Relative humidity,157,400,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+91,w,Vertical velocity,135,400,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+92,u,U component of wind,131,400,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+93,v,V component of wind,132,400,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+94,absv,Absolute vorticity,3041,400,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+95,clwmr,Cloud mixing ratio,260018,400,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+96,gh,Geopotential height,156,450,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+97,t,Temperature,130,450,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+98,r,Relative humidity,157,450,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+99,w,Vertical velocity,135,450,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+100,u,U component of wind,131,450,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+101,v,V component of wind,132,450,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+102,absv,Absolute vorticity,3041,450,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+103,clwmr,Cloud mixing ratio,260018,450,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+104,gh,Geopotential height,156,500,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+105,t,Temperature,130,500,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+106,r,Relative humidity,157,500,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+107,w,Vertical velocity,135,500,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+108,u,U component of wind,131,500,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+109,v,V component of wind,132,500,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+110,absv,Absolute vorticity,3041,500,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+111,clwmr,Cloud mixing ratio,260018,500,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+112,gh,Geopotential height,156,550,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+113,t,Temperature,130,550,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+114,r,Relative humidity,157,550,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+115,w,Vertical velocity,135,550,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+116,u,U component of wind,131,550,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+117,v,V component of wind,132,550,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+118,absv,Absolute vorticity,3041,550,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+119,clwmr,Cloud mixing ratio,260018,550,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+120,gh,Geopotential height,156,600,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+121,t,Temperature,130,600,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+122,r,Relative humidity,157,600,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+123,w,Vertical velocity,135,600,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+124,u,U component of wind,131,600,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+125,v,V component of wind,132,600,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+126,absv,Absolute vorticity,3041,600,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+127,clwmr,Cloud mixing ratio,260018,600,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+128,gh,Geopotential height,156,650,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+129,t,Temperature,130,650,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+130,r,Relative humidity,157,650,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+131,w,Vertical velocity,135,650,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+132,u,U component of wind,131,650,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+133,v,V component of wind,132,650,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+134,absv,Absolute vorticity,3041,650,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+135,clwmr,Cloud mixing ratio,260018,650,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+136,gh,Geopotential height,156,700,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+137,t,Temperature,130,700,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+138,r,Relative humidity,157,700,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+139,w,Vertical velocity,135,700,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+140,u,U component of wind,131,700,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+141,v,V component of wind,132,700,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+142,absv,Absolute vorticity,3041,700,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+143,clwmr,Cloud mixing ratio,260018,700,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+144,gh,Geopotential height,156,750,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+145,t,Temperature,130,750,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+146,r,Relative humidity,157,750,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+147,w,Vertical velocity,135,750,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+148,u,U component of wind,131,750,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+149,v,V component of wind,132,750,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+150,absv,Absolute vorticity,3041,750,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+151,clwmr,Cloud mixing ratio,260018,750,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+152,gh,Geopotential height,156,800,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+153,t,Temperature,130,800,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+154,r,Relative humidity,157,800,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+155,w,Vertical velocity,135,800,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+156,u,U component of wind,131,800,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+157,v,V component of wind,132,800,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+158,absv,Absolute vorticity,3041,800,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+159,clwmr,Cloud mixing ratio,260018,800,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+160,gh,Geopotential height,156,850,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+161,t,Temperature,130,850,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+162,r,Relative humidity,157,850,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+163,w,Vertical velocity,135,850,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+164,u,U component of wind,131,850,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+165,v,V component of wind,132,850,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+166,absv,Absolute vorticity,3041,850,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+167,clwmr,Cloud mixing ratio,260018,850,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+168,gh,Geopotential height,156,900,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+169,t,Temperature,130,900,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+170,r,Relative humidity,157,900,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+171,w,Vertical velocity,135,900,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+172,u,U component of wind,131,900,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+173,v,V component of wind,132,900,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+174,absv,Absolute vorticity,3041,900,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+175,clwmr,Cloud mixing ratio,260018,900,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+176,gh,Geopotential height,156,925,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+177,t,Temperature,130,925,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+178,r,Relative humidity,157,925,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+179,w,Vertical velocity,135,925,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+180,u,U component of wind,131,925,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+181,v,V component of wind,132,925,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+182,absv,Absolute vorticity,3041,925,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+183,clwmr,Cloud mixing ratio,260018,925,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+184,gh,Geopotential height,156,950,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+185,t,Temperature,130,950,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+186,r,Relative humidity,157,950,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+187,w,Vertical velocity,135,950,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+188,u,U component of wind,131,950,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+189,v,V component of wind,132,950,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+190,absv,Absolute vorticity,3041,950,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+191,clwmr,Cloud mixing ratio,260018,950,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+192,hindex,Haines Index,260256,0,surface,Numeric,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+193,gh,Geopotential height,156,975,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+194,t,Temperature,130,975,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+195,r,Relative humidity,157,975,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+196,w,Vertical velocity,135,975,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+197,u,U component of wind,131,975,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+198,v,V component of wind,132,975,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+199,absv,Absolute vorticity,3041,975,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+200,clwmr,Cloud mixing ratio,260018,975,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+201,t,Temperature,130,1000,isobaricInhPa,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+202,r,Relative humidity,157,1000,isobaricInhPa,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+203,w,Vertical velocity,135,1000,isobaricInhPa,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+204,u,U component of wind,131,1000,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+205,v,V component of wind,132,1000,isobaricInhPa,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+206,absv,Absolute vorticity,3041,1000,isobaricInhPa,s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+207,clwmr,Cloud mixing ratio,260018,1000,isobaricInhPa,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+208,unknown,unknown,0,0,meanSea,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+209,gh,Geopotential height,156,1000,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+210,sp,Surface pressure,134,0,surface,Pa,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+211,orog,Orography,228002,0,surface,m,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+212,t,Temperature,130,0,surface,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+213,t,Temperature,130,0,depthBelowLandLayer,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+214,unknown,unknown,0,0,depthBelowLandLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+215,t,Temperature,130,0,depthBelowLandLayer,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+216,unknown,unknown,0,0,depthBelowLandLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+217,t,Temperature,130,0,depthBelowLandLayer,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+218,unknown,unknown,0,0,depthBelowLandLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+219,t,Temperature,130,1,depthBelowLandLayer,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+220,unknown,unknown,0,1,depthBelowLandLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+221,sdwe,Water equivalent of accumulated snow depth (deprecated),260056,0,surface,kg m**-2,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+222,unknown,unknown,0,0,surface,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+223,2t,2 metre temperature,167,2,heightAboveGround,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+224,2sh,2 metre specific humidity,174096,2,heightAboveGround,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+225,2r,2 metre relative humidity,260242,2,heightAboveGround,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+226,tmax,Maximum temperature,3015,2,heightAboveGround,K,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+227,tmin,Minimum temperature,3016,2,heightAboveGround,K,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+228,10u,10 metre U wind component,165,10,heightAboveGround,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+229,10v,10 metre V wind component,166,10,heightAboveGround,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+230,mlsprt,Time-mean large-scale precipitation rate,172142,0,surface,m s**-1,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+231,prate,Precipitation rate,3059,0,surface,kg m**-2 s**-1,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+232,unknown,unknown,0,0,surface,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+233,acpcp,Convective precipitation (water),3063,0,surface,kg m**-2,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+234,watr,Water runoff,260181,0,surface,kg m**-2,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+235,cprate,Time-mean convective precipitation rate,172143,0,surface,m s**-1,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+236,unknown,unknown,0,0,surface,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+237,tprate,Time-mean total precipitation rate,172228,0,surface,m s**-1,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+238,unknown,unknown,0,0,surface,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+239,avg_slhtf,Time-mean surface latent heat flux,235034,0,surface,W m**-2,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+240,avg_ishf,Time-mean surface sensible heat flux,235033,0,surface,W m**-2,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+241,unknown,unknown,0,0,surface,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+242,avg_utaua,Time-mean U-component of atmospheric surface momentum flux,141101,0,surface,N m**-2,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+243,avg_vtaua,Time-mean V-component of atmospheric surface momentum flux,141102,0,surface,N m**-2,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+244,unknown,unknown,0,0,surface,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+245,unknown,unknown,0,0,surface,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+246,unknown,unknown,0,0,surface,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+247,unknown,unknown,0,0,surface,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+248,unknown,unknown,0,0,surface,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+249,unknown,unknown,0,0,surface,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+250,unknown,unknown,0,0,surface,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+251,unknown,unknown,0,0,surface,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+252,pwat,Precipitable water,3054,0,unknown,kg m**-2,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+253,cwat,Cloud water,260102,0,unknown,kg m**-2,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+254,r,Relative humidity,157,0,unknown,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+255,tozne,Total ozone,260130,0,unknown,DU,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+256,unknown,unknown,0,0,unknown,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+257,unknown,unknown,0,0,unknown,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+258,unknown,unknown,0,0,unknown,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+259,unknown,unknown,0,0,unknown,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+260,pres,Pressure,54,0,unknown,Pa,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+261,avg_pres,Time-mean pressure,235098,0,unknown,Pa,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+262,avg_pres,Time-mean pressure,235098,0,unknown,Pa,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+263,avg_pres,Time-mean pressure,235098,0,unknown,Pa,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+264,pres,Pressure,54,0,unknown,Pa,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+265,avg_pres,Time-mean pressure,235098,0,unknown,Pa,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+266,avg_pres,Time-mean pressure,235098,0,unknown,Pa,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+267,avg_pres,Time-mean pressure,235098,0,unknown,Pa,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+268,avg_t,Time-mean temperature,235130,0,unknown,K,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+269,avg_t,Time-mean temperature,235130,0,unknown,K,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+270,avg_t,Time-mean temperature,235130,0,unknown,K,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+271,unknown,unknown,0,0,unknown,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+272,unknown,unknown,0,0,unknown,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+273,avg_lcc_frac,Time-mean low cloud cover,235186,0,unknown,(0 - 1),12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+274,unknown,unknown,0,0,surface,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+275,unknown,unknown,0,0,surface,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+276,unknown,unknown,0,0,surface,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+277,unknown,unknown,0,0,surface,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+278,unknown,unknown,0,0,nominalTop,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+279,unknown,unknown,0,0,nominalTop,unknown,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+280,hlcy,Storm relative helicity,260125,3000,heightAboveGroundLayer,m**2 s**-2,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+281,unknown,unknown,0,6000,heightAboveGroundLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+282,unknown,unknown,0,6000,heightAboveGroundLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+283,trpp,Tropopause pressure,228045,0,tropopause,Pa,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+284,icaht,ICAO Standard Atmosphere reference height,3005,0,tropopause,m,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+285,gh,Geopotential height,156,0,tropopause,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+286,t,Temperature,130,0,tropopause,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+287,u,U component of wind,131,0,tropopause,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+288,v,V component of wind,132,0,tropopause,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+289,unknown,unknown,0,0,tropopause,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+290,pres,Pressure,54,0,maxWind,Pa,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+291,icaht,ICAO Standard Atmosphere reference height,3005,0,maxWind,m,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+292,gh,Geopotential height,156,0,maxWind,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+293,u,U component of wind,131,0,maxWind,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+294,v,V component of wind,132,0,maxWind,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+295,t,Temperature,130,0,maxWind,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+296,t,Temperature,130,80,heightAboveGround,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+297,q,Specific humidity,133,80,heightAboveGround,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+298,pres,Pressure,54,80,heightAboveGround,Pa,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+299,u,U component of wind,131,80,heightAboveGround,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+300,v,V component of wind,132,80,heightAboveGround,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+301,t,Temperature,130,100,heightAboveGround,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+302,100u,100 metre U wind component,228246,100,heightAboveGround,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+303,100v,100 metre V wind component,228247,100,heightAboveGround,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+304,t,Temperature,130,1829,heightAboveSea,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+305,u,U component of wind,131,1829,heightAboveSea,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+306,v,V component of wind,132,1829,heightAboveSea,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+307,t,Temperature,130,2743,heightAboveSea,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+308,u,U component of wind,131,2743,heightAboveSea,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+309,v,V component of wind,132,2743,heightAboveSea,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+310,t,Temperature,130,3658,heightAboveSea,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+311,u,U component of wind,131,3658,heightAboveSea,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+312,v,V component of wind,132,3658,heightAboveSea,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+313,gh,Geopotential height,156,0,isothermZero,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+314,r,Relative humidity,157,0,isothermZero,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+315,gh,Geopotential height,156,0,unknown,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+316,r,Relative humidity,157,0,unknown,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+317,t,Temperature,130,3000,pressureFromGroundLayer,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+318,r,Relative humidity,157,3000,pressureFromGroundLayer,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+319,q,Specific humidity,133,3000,pressureFromGroundLayer,kg kg**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+320,u,U component of wind,131,3000,pressureFromGroundLayer,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+321,v,V component of wind,132,3000,pressureFromGroundLayer,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+322,unknown,unknown,0,0,surface,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+323,unknown,unknown,0,18000,pressureFromGroundLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+324,unknown,unknown,0,18000,pressureFromGroundLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+325,unknown,unknown,0,0,surface,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+326,r,Relative humidity,157,0,sigmaLayer,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+327,r,Relative humidity,157,0,sigmaLayer,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+328,r,Relative humidity,157,1,sigmaLayer,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+329,r,Relative humidity,157,0,sigmaLayer,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+330,t,Temperature,130,1,sigma,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+331,pt,Potential temperature,3,1,sigma,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+332,r,Relative humidity,157,1,sigma,%,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+333,u,U component of wind,131,1,sigma,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+334,v,V component of wind,132,1,sigma,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+335,w,Vertical velocity,135,1,sigma,Pa s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+336,unknown,unknown,0,25500,pressureFromGroundLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+337,unknown,unknown,0,25500,pressureFromGroundLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+338,unknown,unknown,0,25500,pressureFromGroundLayer,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+339,lsm,Land-sea mask,172,0,surface,(0 - 1),18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+340,ci,Sea ice area fraction,31,0,surface,(0 - 1),18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+341,avg_al,Time-mean forecast albedo,235263,0,surface,%,12,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+342,u,U component of wind,131,2000,potentialVorticity,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+343,v,V component of wind,132,2000,potentialVorticity,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+344,t,Temperature,130,2000,potentialVorticity,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+345,gh,Geopotential height,156,2000,potentialVorticity,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+346,pres,Pressure,54,2000,potentialVorticity,Pa,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+347,unknown,unknown,0,2000,potentialVorticity,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+348,u,U component of wind,131,2147485648,potentialVorticity,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+349,v,V component of wind,132,2147485648,potentialVorticity,m s**-1,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+350,t,Temperature,130,2147485648,potentialVorticity,K,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+351,gh,Geopotential height,156,2147485648,potentialVorticity,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+352,pres,Pressure,54,2147485648,potentialVorticity,Pa,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+353,unknown,unknown,0,2147485648,potentialVorticity,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+354,prmsl,Pressure reduced to MSL,260074,0,meanSea,Pa,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+355,unknown,unknown,0,500,isobaricInhPa,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+356,gpa,Geopotential height anomaly,3027,1000,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+357,gpa,Geopotential height anomaly,3027,500,isobaricInhPa,gpm,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
+358,unknown,unknown,0,500,isobaricInhPa,unknown,18,20140308,600,,720,361,90.0,0.0,-90.0,359.5,0.5,0.5,0
