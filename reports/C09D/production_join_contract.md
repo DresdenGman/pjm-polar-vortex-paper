@@ -29,6 +29,6 @@ adjacent trajectories.
 
 - PJM operating days: 2014-01-01 through 2014-12-31 (365 days)
 - Required GFS initializations: 2013-12-31 06:00 UTC through 2014-12-30 06:00 UTC
-- One 06Z cycle per operating day (364 cycles)
+- One 06Z cycle per operating day (**365 cycles** for 365 operating days)
 - Forecast hours per cycle: f018–f048 (11 leads, 31-hour window)
 - Daily forecast window: 2013-12-31 06Z+18h through 2014-12-30 06Z+48h
