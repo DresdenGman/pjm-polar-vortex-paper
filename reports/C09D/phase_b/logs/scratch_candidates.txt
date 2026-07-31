@@ -1,0 +1,20 @@
+/Volumes
+/Volumes/Recovery
+/Volumes/Recovery/369802FD-A5AF-4637-8828-86AB508F6C44
+/Volumes/Recovery/staging
+/Volumes/.timemachine
+/Users/a24300
+/Users/a24300/Music
+/Users/a24300/Music/Audio Music Apps
+/Users/a24300/Music/Music
+/Users/a24300/Music/SonoBus
+/Users/a24300/Music/网易云音乐
+/Users/a24300/Music/GarageBand
+/Users/a24300/.cursor
+/Users/a24300/.cursor/plugins
+/Users/a24300/.cursor/projects
+/Users/a24300/.cursor/agents
+/Users/a24300/.cursor/extensions
+/Users/a24300/.cursor/ai-tracking
+/Users/a24300/.cursor/worktrees
+/Users/a24300/.cursor/skills-cursor
