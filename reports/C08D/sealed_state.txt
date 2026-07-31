@@ -1,0 +1,9 @@
+branch=C08D-probabilistic-diagnostics
+commit=a6b2fd2
+tag=C08D-probabilistic-diagnostics-ready
+tag_commit=a6b2fd2
+c08c_parent=26f9193
+bootstrap_seed=3508246379
+bootstrap_replicates=2000
+event_filter=operating_date
+final_status=C08D_PRODUCTION_READY
