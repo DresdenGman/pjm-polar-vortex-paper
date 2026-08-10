@@ -1,0 +1,53 @@
+{
+  "report": "C09D_STORAGE_CAPACITY_REPORT",
+  "generated_utc": "2026-08-08T00:00:00Z",
+  "january_archive_stats": {
+    "archive_count": 30,
+    "total_bytes": 94365286400,
+    "mean_bytes": 3145509546,
+    "median_bytes": 3412264960,
+    "p95_bytes": 3428628480,
+    "max_bytes": 3431475200,
+    "min_bytes": 1603399680
+  },
+  "remaining_334_projection": {
+    "remaining_cycles": 334,
+    "mean_projection_bytes": 1050600188586,
+    "p95_conservative_projection_bytes": 1145161912320
+  },
+  "full_year_365_conservative_bytes": 1251449395200,
+  "local_storage_windows": {
+    "drive": "C:",
+    "filesystem": "NTFS",
+    "total_bytes": 1022237863936,
+    "free_bytes": 349533265920,
+    "used_bytes": 670167965696,
+    "physical_disk": "Micron_2400_MTFDKBA1T0QFM SSD 1TB"
+  },
+  "cold_storage": {
+    "available": false,
+    "path": null,
+    "free_bytes": null,
+    "filesystem": null,
+    "note": "No second disk, no NAS, no SMB mapping detected. User-owned UGREEN 1TB NAS (闲鱼) exists as candidate cold storage if attached via SMB."
+  },
+  "mode_gate": {
+    "mode_a_local_retention": "NOT_FEASIBLE",
+    "mode_a_reason": "free 349,533,265,920 B < conservative_remaining 1,145,161,912,320 B + 15% safety + 100 GB workspace reserve",
+    "mode_b_cold_migration": "PENDING_COLD_STORAGE",
+    "mode_b_reason": "requires cold storage path; none currently attached",
+    "recommended_retention_mode": "BLOCKED_NO_CAPACITY until cold storage attached, OR Commander decision"
+  },
+  "batch_estimates_gb": {
+    "FY02": 96.0, "FY03": 106.3, "FY04": 102.9, "FY05": 106.3,
+    "FY06": 102.9, "FY07": 106.3, "FY08": 106.3, "FY09": 102.9,
+    "FY10": 106.3, "FY11": 102.9, "FY12": 106.3
+  },
+  "batches_requiring_split": [],
+  "gates": {
+    "ncei_orders_submitted": 0,
+    "canonical_data_touched": "NO",
+    "c10_fits": 0,
+    "paper_tex_touched": "NO"
+  }
+}

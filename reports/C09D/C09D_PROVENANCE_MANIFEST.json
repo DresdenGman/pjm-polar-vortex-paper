@@ -1,0 +1,67 @@
+{
+  "manifest_name": "C09D_PROVENANCE_MANIFEST",
+  "generated_utc": "2026-08-08T00:00:00Z",
+  "project": "PJM Polar Vortex — GFS weather integration (C09D)",
+  "integrity_states": {
+    "TRANSPORT_COMPLETE": "Content-Length exact + local bytes exact + SHA256 recorded",
+    "SOURCE_VERIFIED": "TRANSPORT_COMPLETE + TAR structural PASS + GRIB semantic PASS (11 leads x 358 msgs x 5/5 vars)",
+    "DERIVED_VALID": "partition contract OK (44/124/31 rows, no dup, no NaN)",
+    "PROVISIONAL_SEALED": "30/31 cycles sealed, NOT for final analysis",
+    "FINAL_SEALED": "NOT YET ACHIEVED — 31/31 + canonical rebuild required"
+  },
+  "source_summary": {
+    "dataset": "NCEI GFS Grid 004 / 0.5-degree (GFSGRB24)",
+    "initialization": "06:00 UTC daily",
+    "leads": ["f018", "f021", "f024", "f027", "f030", "f033", "f036", "f039", "f042", "f045", "f048"],
+    "stations": ["Baltimore_Washington_MD", "Chicago_OHare_IL", "Cincinnati_OH", "Philadelphia_PA"],
+    "source_verified_cycles": 30,
+    "source_invalid_cycles": 1,
+    "invalid_initialization": "2014-01-16T06:00:00Z",
+    "invalid_lead": "f039",
+    "target_gribs_pass_healthy": "330/330"
+  },
+  "incident_2014_01_16": {
+    "observed": "native partition 40 rows (expected 44); f039 has 65 msgs (expected 358); 0/5 required vars; ecCodes 'Wrong message length'",
+    "orders": ["HAS012727456", "HAS012729318"],
+    "tar_sha256": "F4C08CEFC1A7C8AAF3E8FB30B41AE84C9661E5C9363D2C0D733030E322A9FBA6",
+    "tar_bytes": 3418347520,
+    "f039_sha256": "A1148F9BA526638AA21EF64777C21BE81BC22F31C1CAAE4FABEB25F96205C4DD",
+    "f039_bytes": 53219736,
+    "conclusion": "UPSTREAM ARCHIVAL CORRUPTION — byte-identical across two independent HAS orders",
+    "quarantine_path": "quarantine/source_corrupt_20140116/",
+    "evidence_path": "quarantine/source_corrupt_20140116/evidence/",
+    "ncei_reported": "2026-08-07 via ncei.orders@noaa.gov",
+    "ncar_case": "DATAHELP-6009 OPEN"
+  },
+  "seal_30c": {
+    "seal_file": "reports/C09D/C09D_30C_PROVISIONAL_SEAL.json",
+    "status": "PROVISIONAL_NOT_FOR_FINAL_ANALYSIS",
+    "source_valid_cycles": 30,
+    "source_invalid_cycles": 1,
+    "native_rows": 1320,
+    "hourly_rows": 3720,
+    "trajectory_rows": 930,
+    "snapshot": {
+      "source_integrity_manifest.csv": {"bytes": 5414, "sha256": "1ba68768e5ded376d0b7677b35d2a66441154e0fbad612a7358e5bc100270f9f", "rows": 31},
+      "gfs_native_panel_PROVISIONAL_30C.csv": {"bytes": 170147, "sha256": "bf58599c7efc6a14d5baa26bd57ae43ecab075aa33c8274f93aadf376ea9c0b3", "rows": 1320},
+      "gfs_hourly_panel_PROVISIONAL_30C.csv": {"bytes": 854833, "sha256": "2bf33854a905e2b776e5ad401e8b7931946ffa282a572d2313cc08e3963ac960", "rows": 3720},
+      "gfs_trajectory_features_PROVISIONAL_30C.csv": {"bytes": 98594, "sha256": "1621dedcc7191d234bb569e65f635afc8e5af6ccf611343b07e66a6608100e7b", "rows": 930},
+      "run_c09d_january_batch.py": {"bytes": 11869, "sha256": "06f09ed1b169f8e1f8372b410e40588cc13f686afae75f98a26fee1406a57694", "rows": null}
+    }
+  },
+  "invariants": {
+    "native_per_cycle": 44,
+    "hourly_per_cycle": 124,
+    "trajectory_per_cycle": 31,
+    "final_31c_targets": {"native": 1364, "hourly": 3844, "trajectory": 961}
+  },
+  "code_version": {
+    "runner": "run_c09d_january_batch.py (V3 semantic gate patched 2026-08-08)",
+    "verification_evolution": ["V1 Content-Length", "V2 +SHA256", "V3 +tar structural +GRIB semantic"]
+  },
+  "blockers": {
+    "C09D_FINAL_SEAL": "BLOCKED_EXTERNAL — awaiting NCEI or NCAR DATAHELP-6009 healthy 0.5-deg GFS source for 2014-01-16 06Z f039",
+    "C10": "NOT AUTHORIZED",
+    "paper.tex": "FROZEN"
+  }
+}

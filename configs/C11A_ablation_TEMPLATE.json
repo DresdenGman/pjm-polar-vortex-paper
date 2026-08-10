@@ -1,0 +1,22 @@
+{
+  "id": "C11A_ablation_TEMPLATE",
+  "production_enabled": false,
+  "require_c09d_2014_final_seal": true,
+  "requires_c10a_frozen": true,
+  "requires_c10b_frozen": true,
+  "analysis_role": "secondary_explanatory",
+  "seal_path": "reports/C09D/C09D_2014_FINAL_SEAL.json",
+  "feature_groups_locked_before_c10_results": true,
+  "feature_taxonomy_source": "C09C",
+  "feature_groups": [
+    "temperature",
+    "humidity",
+    "wind",
+    "pressure",
+    "all_weather",
+    "no_weather_baseline"
+  ],
+  "ablation_protocol": "remove_one_predefined_group_refit_same_folds_seeds_grid",
+  "metrics": ["mae", "rmse", "crps", "coverage"],
+  "notes": "POST-HOC EXPLANATORY, NOT primary competition (Command 048-P2R Decision 4)"
+}

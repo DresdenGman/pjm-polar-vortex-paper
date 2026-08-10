@@ -1,0 +1,38 @@
+{
+  "seal_id": "C09D_JANUARY_MSRS_SEAL",
+  "date": "2026-08-10",
+  "command": "051",
+  "cycles": 30,
+  "grib_members": 330,
+  "byte_identity_pass": "330/330",
+  "semantic_pass": "330/330",
+  "manifests": "30/30",
+  "total_bytes": 17417372215,
+  "mean_per_cycle_bytes": 580579073,
+  "median_per_cycle_bytes": 580625917,
+  "p95_per_cycle_bytes": 583337135,
+  "max_per_cycle_bytes": 585611247,
+  "min_per_cycle_bytes": 575579884,
+  "projections": {
+    "365c_msrs_p95_bytes": 212918054275,
+    "365c_msrs_p95_gb": 212.9,
+    "334_remaining_msrs_p95_bytes": 194834603090,
+    "334_remaining_msrs_p95_gb": 194.8,
+    "full_tar_comparison_bytes": 1251449395200,
+    "storage_reduction_pct": 83.0
+  },
+  "local_capacity": {
+    "windows_free_bytes": 349533265920,
+    "worst_case_peak_bytes": 312918054275,
+    "worst_case_peak_gb": 312.9,
+    "LOCAL_MODE_MSRS_FEASIBLE": true
+  },
+  "retention": {
+    "full_tars_retained": true,
+    "full_tars_deleted": false,
+    "01-16_quarantine_unchanged": true,
+    "msrs_bundle_location": "C:\\C09D\\raw\\msrs"
+  },
+  "status": "MSRS_SEALED",
+  "next": "MIG-02 Phase 1 — Migration Freeze Point"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "C10A_weather_point_TEMPLATE",
+  "production_enabled": false,
+  "require_c09d_2014_final_seal": true,
+  "seal_path": "reports/C09D/C09D_2014_FINAL_SEAL.json",
+  "hourly_panel_path": "reports/C09B/gfs_hourly_panel_2014_FINAL.csv",
+  "network_panel_path": "reports/C09B/gfs_trajectory_features_2014_FINAL.csv",
+  "model_families": ["ridge", "hist_gbr", "extra_trees"],
+  "hyperparameter_policy": "same_search_space_same_validation_rerun_on_train_only",
+  "folds": "inherit_C08B",
+  "seeds": "inherit_C08B_seed_family",
+  "metrics": ["mae", "rmse", "peak_day_error"],
+  "cold_event_days": ["E2014", "E2018", "E2022"],
+  "feature_block": "load_only_plus_GFS_weather",
+  "notes": "STRICT ADDITIVE to C08B (Command 048-P2R Decision 2)"
+}

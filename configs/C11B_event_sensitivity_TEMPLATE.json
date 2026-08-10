@@ -1,0 +1,16 @@
+{
+  "id": "C11B_event_sensitivity_TEMPLATE",
+  "production_enabled": false,
+  "require_c09d_2014_final_seal": true,
+  "primary_event_registry_immutable": true,
+  "analysis_role": "secondary_robustness",
+  "threshold_grid_locked": false,
+  "seal_path": "reports/C09D/C09D_2014_FINAL_SEAL.json",
+  "primary_events": {
+    "E2014": "official_PJM_window_immutable",
+    "E2018": "official_PJM_window_immutable",
+    "E2022": "official_PJM_window_immutable",
+    "E2015": "ERA5_rule_48h_below_winter_5th_percentile"
+  },
+  "notes": "SECONDARY ROBUSTNESS ONLY; threshold grid must be frozen by Commander before execution (Command 048-P2R Decision 5)"
+}
